@@ -1537,6 +1537,9 @@ transform:translateY(-5px);
 }
 
 .footer h3{
-
     font-size:28px;
+    font-weight:700;
+    margin-bottom:15px;
+    letter-spacing:0.5px;
+}
 
