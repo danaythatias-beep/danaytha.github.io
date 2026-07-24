@@ -173,12 +173,18 @@ BUTTON
 
 }
 
-.btn-primary:hover{
+.btn-primary{
+    background:linear-gradient(135deg,#2563eb,#00cfff);
+}
 
-    transform:translateY(-4px);
+.btn-secondary{
+    border:2px solid #fff;
+    color:#fff;
+}
 
-    box-shadow:var(--shadow);
-
+.btn-secondary:hover{
+    background:#fff;
+    color:#2563eb;
 }
 
 .btn-secondary{
@@ -300,12 +306,12 @@ HEADER
 }
 
 .navbar a{
+    color:#ffffff;
+}
 
-    color:#374151;
-
-    font-weight:500;
-
-    transition:.3s;
+.navbar a:hover{
+    color:#59d8ff;
+}
 
 }
 
@@ -358,6 +364,19 @@ HERO
             #052b3b 65%,
             #03161f 100%
         );
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle,
+        rgba(255,255,255,.08),
+        transparent 70%);
+    filter:blur(120px);
+    opacity:.7;
+    pointer-events:none;
 }
 
 .hero-container{
