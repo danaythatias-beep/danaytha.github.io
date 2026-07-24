@@ -291,7 +291,7 @@ HEADER
 
     font-weight:700;
 
-    color:var(--primary);
+   color:#ffffff;
 
 }
 
@@ -397,31 +397,23 @@ HERO
 }
 
 .hero h1{
-
     font-size:56px;
-
     margin:15px 0;
-
-    color:var(--dark);
-
+    color:#ffffff;
 }
 
 .hero h2{
-
-    color:var(--primary);
-
+    color:#ffffff;
     margin-bottom:20px;
-
-    min-height:40px;
-
 }
 
 .hero p{
-
-    color:#475569;
-
+    color:rgba(255,255,255,.82);
     margin-bottom:35px;
+}
 
+.hero-subtitle{
+    color:#39d8ff;
 }
 
 .hero-buttons{
@@ -476,22 +468,14 @@ HERO
 
 }
 
-.hero-image{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
+.hero-image img{
+    width:100%;
+    max-width:420px;
     margin:auto;
-
     border-radius:50%;
-
     border:8px solid white;
-
     box-shadow:0 25px 60px rgba(0,0,0,.15);
-
     animation:floating 4s ease-in-out infinite;
-
 }
 
 @keyframes floating{
