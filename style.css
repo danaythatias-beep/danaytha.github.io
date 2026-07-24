@@ -16,86 +16,80 @@
  HERO SECTION
 ====================================*/
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:120px 8%;
+/*====================================
+ HERO BACKGROUND
+====================================*/
 
-    position:relative;
-    overflow:hidden;
+.hero{
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
 
     background:
-        radial-gradient(circle at 100% 25%,
-            rgba(0,212,255,.35) 0%,
-            transparent 22%),
-
-        radial-gradient(circle at 0% 100%,
-            rgba(0,191,255,.28) 0%,
-            transparent 28%),
-
         linear-gradient(
             180deg,
-            #0b7ea2 0%,
-            #07546d 30%,
-            #043444 65%,
-            #02171f 100%
+            #0d7ca0 0%,
+            #085870 30%,
+            #043948 60%,
+            #02222d 80%,
+            #010f16 100%
         );
 }
 
 /* Glow kanan atas */
 .hero::before{
-    content:'';
+    content:"";
     position:absolute;
 
-    width:420px;
-    height:420px;
+    top:-180px;
+    right:-180px;
 
-    top:-120px;
-    right:-150px;
+    width:550px;
+    height:550px;
 
     border-radius:50%;
 
-    background:#19d3ff;
+    background:#19d9ff;
 
-    filter:blur(140px);
+    filter:blur(130px);
 
-    opacity:.55;
+    opacity:.65;
 }
 
 /* Glow kiri bawah */
 .hero::after{
-    content:'';
+    content:"";
     position:absolute;
 
-    width:420px;
-    height:420px;
+    bottom:-220px;
+    left:-220px;
 
-    left:-180px;
-    bottom:-180px;
+    width:550px;
+    height:550px;
 
     border-radius:50%;
 
     background:#00bfff;
 
-    filter:blur(150px);
+    filter:blur(140px);
 
-    opacity:.35;
+    opacity:.45;
 }
 
-linear-gradient(
-    180deg,
-    #0b7698 0%,
-    #05465c 35%,
-    #022d39 70%,
-    #010d14 100%
-);
-
+/* Supaya konten berada di atas glow */
 .hero-container{
     position:relative;
     z-index:2;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:80px;
 }
+
 /*=============================
  Glass Card
 =============================*/
