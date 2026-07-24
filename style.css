@@ -3180,8 +3180,6 @@ GRID
 CARD
 ============================== */
 
-.project-card{
-
     position:relative;
 
     background:#fff;
@@ -5914,4 +5912,151 @@ img{
 
     }
 
+}
+
+/* =====================================
+   SKILLS SECTION
+===================================== */
+
+.skills{
+    background: linear-gradient(135deg,#0b3a5b 0%,#0f5b8d 50%,#0a2e47 100%);
+    padding:120px 0;
+    position:relative;
+    overflow:hidden;
+}
+
+.skills::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(255,255,255,.05);
+    border-radius:50%;
+    filter:blur(100px);
+    top:-180px;
+    left:-180px;
+}
+
+.skills .container{
+    position:relative;
+    z-index:2;
+}
+
+.skills .section-title h2{
+    color:#fff;
+}
+
+.skills .section-title p{
+    color:rgba(255,255,255,.75);
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
+
+.skill-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:22px;
+    padding:40px 20px;
+    text-align:center;
+    transition:.4s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,.13);
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+}
+
+.skill-card i{
+    font-size:42px;
+    color:#49c8ff;
+    margin-bottom:20px;
+}
+
+.skill-card h3{
+    color:#fff;
+    font-size:20px;
+    font-weight:600;
+}
+
+
+/* =====================================
+   PATENTS SECTION
+===================================== */
+
+.patents{
+    background:linear-gradient(135deg,#0a2f47,#0d4e74,#0b3a5b);
+    padding:120px 0;
+    position:relative;
+    overflow:hidden;
+}
+
+.patents::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:rgba(0,212,255,.08);
+    right:-250px;
+    top:-250px;
+    filter:blur(120px);
+}
+
+.patents .container{
+    position:relative;
+    z-index:2;
+}
+
+.patents .section-title h2{
+    color:#fff;
+}
+
+.patents .section-title p{
+    color:rgba(255,255,255,.75);
+}
+
+.patent-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
+    margin-top:60px;
+}
+
+.patent-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:24px;
+    padding:40px 30px;
+    text-align:center;
+    transition:.4s;
+}
+
+.patent-card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,.12);
+    box-shadow:0 20px 45px rgba(0,0,0,.3);
+}
+
+.patent-card i{
+    font-size:48px;
+    color:#4fd8ff;
+    margin-bottom:20px;
+}
+
+.patent-card h3{
+    color:#fff;
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.patent-card p{
+    color:rgba(255,255,255,.82);
 }
