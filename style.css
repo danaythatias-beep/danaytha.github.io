@@ -1,107 +1,73 @@
-:root {
-  --primary:#2563eb;
-  --secondary:#3b82f6;
-  --accent:#06b6d4;
-  --dark:#0f172a;
-  --dark2:#1e293b;
-  --light:#f8fafc;
-  --white:#ffffff;
-  --gray:#64748b;
-  --gray2:#94a3b8;
-  --gradient:linear-gradient(135deg, #2563eb, #06b6d4);
-  --shadow:0 10px 30px rgba(0,0,0,.15);
-  --radius:20px;
+/* =======================================================
+   DANAYTHA PORTFOLIO
+   Part 1
+   Reset + Global + Navbar + Hero + Statistics
+=======================================================*/
+
+/* ===========================
+   GOOGLE VARIABLES
+===========================*/
+
+:root{
+
+    --primary:#2563eb;
+    --secondary:#3b82f6;
+    --accent:#06b6d4;
+
+    --dark:#0f172a;
+    --dark2:#1e293b;
+    --light:#f8fafc;
+
+    --white:#ffffff;
+
+    --gray:#64748b;
+    --gray2:#94a3b8;
+
+    --gradient:linear-gradient(
+        135deg,
+        #2563eb,
+        #06b6d4
+    );
+
+    --shadow:0 10px 30px rgba(0,0,0,.15);
+
+    --radius:20px;
+
 }
 
-/* =========================== RESET =========================== */
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-html {
-  scroll-behavior:smooth;
-}
-body {
-  font-family:'Poppins',sans-serif;
-  background:#f5f7fb;
-  color:#1f2937;
-  line-height:1.8;
-  overflow-x:hidden;
+/* ===========================
+RESET
+===========================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
 }
 
-/* =========================== HEADER =========================== */
-header {
-  background:var(--gradient);
-  color:var(--white);
-  padding:20px;
-  text-align:center;
-  box-shadow:var(--shadow);
-  border-radius:0 0 var(--radius) var(--radius);
-}
-header h1 {
-  font-size:28px;
-  font-weight:600;
-}
-nav {
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  margin-top:10px;
-}
-nav a {
-  color:var(--white);
-  text-decoration:none;
-  font-weight:500;
-  transition:.3s;
-}
-nav a:hover {
-  color:var(--accent);
+html{
+
+    scroll-behavior:smooth;
+
 }
 
-/* =========================== CONTAINER =========================== */
-.container {
-  max-width:1000px;
-  margin:40px auto;
-  padding:20px;
-  background:var(--white);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
-.container h2 {
-  color:var(--primary);
-  margin-bottom:20px;
-}
-.container p {
-  color:var(--gray);
-  margin-bottom:15px;
-}
+body{
 
-/* =========================== BUTTON =========================== */
-button {
-  background:var(--secondary);
-  color:var(--white);
-  border:none;
-  padding:12px 24px;
-  border-radius:var(--radius);
-  cursor:pointer;
-  font-size:16px;
-  transition:.3s;
-}
-button:hover {
-  background:var(--accent);
-}
+    font-family:'Poppins',sans-serif;
 
-/* =========================== FOOTER =========================== */
-footer {
-  background:var(--dark2);
-  color:var(--gray2);
-  text-align:center;
-  padding:20px;
-  margin-top:40px;
-  border-radius:var(--radius) var(--radius) 0 0;
-}
+    background:#f5f7fb;
 
+    color:#1f2937;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
 
 /* ===========================
 CONTAINER
@@ -493,6 +459,18 @@ HERO
     border-radius:50%;
     border:8px solid white;
     box-shadow:0 25px 60px rgba(0,0,0,.15);
+    animation:floating 4s ease-in-out infinite;
+
+}
+
+    margin:auto;
+
+    border-radius:50%;
+
+    border:8px solid white;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+
     animation:floating 4s ease-in-out infinite;
 
 }
@@ -1063,9 +1041,13 @@ STATISTICS
 }
 
 .certificate-card img{
-   
+
     width:100%;
     height:230px;
+    object-fit:cover;
+
+}
+
     object-fit:cover;
 
 }
@@ -1346,9 +1328,8 @@ grid-template-columns:repeat(2,1fr);
 
 @media (max-width:768px){
 
-
 }
-   
+
 @keyframes fadeDown{
 
     from{
@@ -1390,8 +1371,7 @@ background:var(--primary);
 color:white;
 
 }
-
-.header.sticky{
+   .header.sticky{
 
     background:rgba(255,255,255,.95);
 
@@ -1400,8 +1380,7 @@ color:white;
     box-shadow:0 8px 25px rgba(0,0,0,.08);
 
 }
-
-.navbar a.active{
+   .navbar a.active{
 
     color:var(--primary);
 
@@ -1561,4 +1540,3 @@ transform:translateY(-5px);
 
     font-size:28px;
 
-}
