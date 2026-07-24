@@ -617,6 +617,78 @@ Typography
 /*==============================
 HERO SECTION
 ==============================*/
+/*====================================
+ HERO IMAGE
+====================================*/
+
+.hero-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:80px;
+
+}
+
+.hero-content{
+
+    flex:1;
+
+}
+
+.hero-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero-image-card{
+
+    position:relative;
+
+    width:480px;
+
+    height:480px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    border:2px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+
+}
+
+.hero-image-card img{
+
+    width:430px;
+
+    height:430px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+}
 
 .hero{
 
