@@ -1,456 +1,107 @@
-/* =======================================================
-   DANAYTHA PORTFOLIO
-   Part 1
-   Reset + Global + Navbar + Hero + Statistics
-=======================================================*/
-
-/* ===========================
-   GOOGLE VARIABLES
-===========================*/
-
-/*====================================
- HERO SECTION
-====================================*/
-
-/*====================================
- HERO SECTION
-====================================*/
-
-/*====================================
- HERO BACKGROUND
-====================================*/
-
-.hero{
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-
-    background:
-        linear-gradient(
-            180deg,
-            #0d7ca0 0%,
-            #085870 30%,
-            #043948 60%,
-            #02222d 80%,
-            #010f16 100%
-        );
+:root {
+  --primary:#2563eb;
+  --secondary:#3b82f6;
+  --accent:#06b6d4;
+  --dark:#0f172a;
+  --dark2:#1e293b;
+  --light:#f8fafc;
+  --white:#ffffff;
+  --gray:#64748b;
+  --gray2:#94a3b8;
+  --gradient:linear-gradient(135deg, #2563eb, #06b6d4);
+  --shadow:0 10px 30px rgba(0,0,0,.15);
+  --radius:20px;
 }
 
-/* Glow kanan atas */
-.hero::before{
-    content:"";
-    position:absolute;
-
-    top:-180px;
-    right:-180px;
-
-    width:550px;
-    height:550px;
-
-    border-radius:50%;
-
-    background:#19d9ff;
-
-    filter:blur(130px);
-
-    opacity:.65;
+/* =========================== RESET =========================== */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html {
+  scroll-behavior:smooth;
+}
+body {
+  font-family:'Poppins',sans-serif;
+  background:#f5f7fb;
+  color:#1f2937;
+  line-height:1.8;
+  overflow-x:hidden;
 }
 
-/* Glow kiri bawah */
-.hero::after{
-    content:"";
-    position:absolute;
-
-    bottom:-220px;
-    left:-220px;
-
-    width:550px;
-    height:550px;
-
-    border-radius:50%;
-
-    background:#00bfff;
-
-    filter:blur(140px);
-
-    opacity:.45;
+/* =========================== HEADER =========================== */
+header {
+  background:var(--gradient);
+  color:var(--white);
+  padding:20px;
+  text-align:center;
+  box-shadow:var(--shadow);
+  border-radius:0 0 var(--radius) var(--radius);
+}
+header h1 {
+  font-size:28px;
+  font-weight:600;
+}
+nav {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-top:10px;
+}
+nav a {
+  color:var(--white);
+  text-decoration:none;
+  font-weight:500;
+  transition:.3s;
+}
+nav a:hover {
+  color:var(--accent);
 }
 
-/* Supaya konten berada di atas glow */
-.hero-container{
-    position:relative;
-    z-index:2;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:80px;
+/* =========================== CONTAINER =========================== */
+.container {
+  max-width:1000px;
+  margin:40px auto;
+  padding:20px;
+  background:var(--white);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.container h2 {
+  color:var(--primary);
+  margin-bottom:20px;
+}
+.container p {
+  color:var(--gray);
+  margin-bottom:15px;
 }
 
-/*=============================
- Glass Card
-=============================*/
-
-.glass-card{
-
-    position:relative;
-
-    width:100%;
-    max-width:700px;
-
-    padding:60px;
-
-    border-radius:35px;
-
-    background:rgba(255,255,255,.10);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.25);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.25),
-        inset 0 1px 1px rgba(255,255,255,.5);
-
-    overflow:hidden;
+/* =========================== BUTTON =========================== */
+button {
+  background:var(--secondary);
+  color:var(--white);
+  border:none;
+  padding:12px 24px;
+  border-radius:var(--radius);
+  cursor:pointer;
+  font-size:16px;
+  transition:.3s;
+}
+button:hover {
+  background:var(--accent);
 }
 
-/* Gloss Effect */
-
-.glass-card::before{
-
-    content:'';
-
-    position:absolute;
-
-    top:-40%;
-
-    left:-30%;
-
-    width:180%;
-
-    height:80%;
-
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.35),
-        transparent
-    );
-
-    transform:rotate(-8deg);
+/* =========================== FOOTER =========================== */
+footer {
+  background:var(--dark2);
+  color:var(--gray2);
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+  border-radius:var(--radius) var(--radius) 0 0;
 }
 
-/*=============================
- Typography
-=============================*/
-
-.glass-card .hello{
-
-    color:#8ef2ff;
-
-    font-size:20px;
-
-    font-weight:600;
-
-}
-
-.glass-card h1{
-
-    margin:15px 0;
-
-    color:#fff;
-
-    font-size:58px;
-
-    font-weight:700;
-
-}
-
-.glass-card h2{
-
-    color:#fff;
-
-    font-size:34px;
-
-    margin-bottom:25px;
-
-}
-
-.glass-card p{
-
-    color:rgba(255,255,255,.85);
-
-    line-height:1.8;
-
-    font-size:18px;
-
-}
-
-
-/*=============================
- Button
-=============================*/
-
-.hero-btn{
-
-    margin-top:40px;
-
-    display:flex;
-
-    gap:20px;
-
-}
-
-.btn{
-
-    padding:16px 40px;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-    font-weight:600;
-
-    transition:.35s;
-
-}
-
-.btn-primary{
-
-    color:#fff;
-
-    background:linear-gradient(135deg,#2563eb,#06b6d4);
-
-}
-
-.btn-primary:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 15px 30px rgba(6,182,212,.45);
-
-}
-
-.btn-outline{
-
-    color:#fff;
-
-    border:2px solid rgba(255,255,255,.35);
-
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(15px);
-
-}
-
-.btn-outline:hover{
-
-    background:rgba(255,255,255,.18);
-
-}
-
-/*=============================
- Glass Card
-=============================*/
-
-.glass-card{
-
-    position:relative;
-
-    width:100%;
-    max-width:700px;
-
-    padding:60px;
-
-    border-radius:35px;
-
-    background:rgba(255,255,255,.10);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.25);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.25),
-        inset 0 1px 1px rgba(255,255,255,.5);
-
-    overflow:hidden;
-}
-
-/* Gloss Effect */
-
-.glass-card::before{
-
-    content:'';
-
-    position:absolute;
-
-    top:-40%;
-
-    left:-30%;
-
-    width:180%;
-
-    height:80%;
-
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.35),
-        transparent
-    );
-
-    transform:rotate(-8deg);
-}
-
-/*=============================
- Typography
-=============================*/
-
-.glass-card .hello{
-
-    color:#8ef2ff;
-
-    font-size:20px;
-
-    font-weight:600;
-
-}
-
-.glass-card h1{
-
-    margin:15px 0;
-
-    color:#fff;
-
-    font-size:58px;
-
-    font-weight:700;
-
-}
-
-.glass-card h2{
-
-    color:#fff;
-
-    font-size:34px;
-
-    margin-bottom:25px;
-
-}
-
-.glass-card p{
-
-    color:rgba(255,255,255,.85);
-
-    line-height:1.8;
-
-    font-size:18px;
-
-}
-
-
-/*=============================
- Button
-=============================*/
-
-.hero-btn{
-
-    margin-top:40px;
-
-    display:flex;
-
-    gap:20px;
-
-}
-
-.btn{
-
-    padding:16px 40px;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-    font-weight:600;
-
-    transition:.35s;
-
-}
-
-.btn-primary{
-
-    color:#fff;
-
-    background:linear-gradient(135deg,#2563eb,#06b6d4);
-
-}
-
-.btn-primary:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 15px 30px rgba(6,182,212,.45);
-
-}
-
-.btn-outline{
-
-    color:#fff;
-
-    border:2px solid rgba(255,255,255,.35);
-
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(15px);
-
-}
-
-.btn-outline:hover{
-
-    background:rgba(255,255,255,.18);
-
-}
-
-/* ===========================
-RESET
-===========================*/
-
-*{
-
-    margin:0;
-
-    padding:0;
-
-    box-sizing:border-box;
-
-}
-
-html{
-
-    scroll-behavior:smooth;
-
-}
-
-body{
-
-    font-family:'Poppins',sans-serif;
-
-    background:#f5f7fb;
-
-    color:#1f2937;
-
-    line-height:1.8;
-
-    overflow-x:hidden;
-
-}
 
 /* ===========================
 CONTAINER
