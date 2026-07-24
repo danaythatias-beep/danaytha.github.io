@@ -649,9 +649,9 @@ HERO SECTION
 
 /* Lingkaran luar */
 .hero-image-card{
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 30%;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -667,7 +667,7 @@ HERO SECTION
     height: 100%;
     object-fit: cover;
     object-position: center top; /* fokus ke wajah */
-    border-radius: 50%;
+    border-radius: 30%;
 }
 
 .hero{
