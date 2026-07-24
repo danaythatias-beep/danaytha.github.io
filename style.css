@@ -2574,7 +2574,41 @@ RESPONSIVE
 /* =====================================================
    EXPERIENCE
 ===================================================== */
+/* =====================================
+   TIMELINE CARD FADE-IN ANIMATION
+===================================== */
 
+.timeline-content{
+    opacity:0;
+    transform:translateY(40px) scale(0.96);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22,1,.36,1);
+    will-change:opacity, transform;
+}
+
+/* Saat AOS aktif */
+.timeline-content.aos-animate{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+/* Delay per kotak agar muncul bergantian */
+.timeline-item:nth-child(1) .timeline-content{
+    transition-delay:.05s;
+}
+
+.timeline-item:nth-child(2) .timeline-content{
+    transition-delay:.15s;
+}
+
+.timeline-item:nth-child(3) .timeline-content{
+    transition-delay:.25s;
+}
+
+.timeline-item:nth-child(4) .timeline-content{
+    transition-delay:.35s;
+}
 .experience{
 
     position:relative;
