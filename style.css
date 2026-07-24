@@ -330,23 +330,34 @@ HERO
 ===========================*/
 
 .hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:120px 8%;
 
-    padding-top:180px;
+    position:relative;
+    overflow:hidden;
 
     background:
+        radial-gradient(circle at 0% 85%,
+            rgba(0,212,255,.30) 0%,
+            transparent 28%),
 
-    linear-gradient(
+        radial-gradient(circle at 100% 25%,
+            rgba(0,212,255,.35) 0%,
+            transparent 24%),
 
-        rgba(255,255,255,.85),
+        radial-gradient(circle at 50% 100%,
+            rgba(0,0,0,.45) 0%,
+            transparent 55%),
 
-        rgba(255,255,255,.92)
-
-    ),
-
-    url("images/bg.jpg");
-
-    background-size:cover;
-
+        linear-gradient(
+            160deg,
+            #0b5d7d 0%,
+            #073f58 30%,
+            #052b3b 65%,
+            #03161f 100%
+        );
 }
 
 .hero-container{
