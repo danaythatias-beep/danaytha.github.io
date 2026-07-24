@@ -4777,14 +4777,6 @@ RESPONSIVE
    RESPONSIVE
 =========================== */
 
-@media(max-width:900px){
-
-    .education-card{
-
-        flex-direction:column;
-
-        text-align:center;
-
     }
 
     .education-info{
