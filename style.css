@@ -27,40 +27,75 @@
     overflow:hidden;
 
     background:
-    radial-gradient(circle at top right,#1fd8ff55 0%,transparent 30%),
-    radial-gradient(circle at bottom left,#00bfff55 0%,transparent 35%),
-    linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+        radial-gradient(circle at 100% 25%,
+            rgba(0,212,255,.35) 0%,
+            transparent 22%),
+
+        radial-gradient(circle at 0% 100%,
+            rgba(0,191,255,.28) 0%,
+            transparent 28%),
+
+        linear-gradient(
+            180deg,
+            #0b7ea2 0%,
+            #07546d 30%,
+            #043444 65%,
+            #02171f 100%
+        );
 }
 
-/* Glow Background */
-
+/* Glow kanan atas */
 .hero::before{
     content:'';
     position:absolute;
-    width:500px;
-    height:500px;
-    background:#06b6d4;
-    filter:blur(180px);
-    opacity:.35;
 
-    top:-180px;
-    right:-120px;
+    width:420px;
+    height:420px;
+
+    top:-120px;
+    right:-150px;
+
+    border-radius:50%;
+
+    background:#19d3ff;
+
+    filter:blur(140px);
+
+    opacity:.55;
 }
 
+/* Glow kiri bawah */
 .hero::after{
     content:'';
     position:absolute;
-    width:450px;
-    height:450px;
-    background:#2563eb;
-    filter:blur(180px);
-    opacity:.25;
 
+    width:420px;
+    height:420px;
+
+    left:-180px;
     bottom:-180px;
-    left:-150px;
+
+    border-radius:50%;
+
+    background:#00bfff;
+
+    filter:blur(150px);
+
+    opacity:.35;
 }
 
+linear-gradient(
+    180deg,
+    #0b7698 0%,
+    #05465c 35%,
+    #022d39 70%,
+    #010d14 100%
+);
 
+.hero-container{
+    position:relative;
+    z-index:2;
+}
 /*=============================
  Glass Card
 =============================*/
