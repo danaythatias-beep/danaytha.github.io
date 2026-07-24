@@ -2586,11 +2586,6 @@ RESPONSIVE
         transform .8s cubic-bezier(.22,1,.36,1);
     will-change:opacity, transform;
 }
-
-/* Saat AOS aktif */
-.timeline-content.aos-animate{
-    opacity:1;
-    transform:translateY(0) scale(1);
 }
 
 /* Delay per kotak agar muncul bergantian */
