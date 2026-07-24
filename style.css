@@ -334,6 +334,36 @@ HEADER
 /* ===========================
 HERO
 ===========================*/
+/* HERO HEADING */
+
+.hero-heading{
+    max-width: 750px;
+}
+
+.hero-heading h1{
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    line-height: 1.05;
+    font-weight: 800;
+    margin-bottom: 24px;
+    letter-spacing: -2px;
+}
+
+.white-text{
+    color: #ffffff;
+    display: block;
+}
+
+.blue-text{
+    color: #6FD3FF;   /* biru muda */
+    display: block;
+}
+
+.hero-heading p{
+    font-size: 1.15rem;
+    color: rgba(255,255,255,.75);
+    line-height: 1.8;
+    max-width: 600px;
+}
 
 .hero{
     min-height:100vh;
@@ -366,6 +396,12 @@ HERO
         );
 }
 
+.blue-text{
+    color: #6FD3FF;
+    text-shadow:
+        0 0 10px rgba(111,211,255,.35),
+        0 0 25px rgba(111,211,255,.25);
+}
 .hero::before{
     content:"";
     position:absolute;
