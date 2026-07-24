@@ -2571,65 +2571,36 @@ RESPONSIVE
 }
 
 }
-/* =====================================================
-   EXPERIENCE
-===================================================== */
-/* =====================================
-   TIMELINE CARD FADE-IN ANIMATION
-===================================== */
+/*======================================================
+ EXPERIENCE
+======================================================*/
 
-.timeline-content{
-
-    opacity:100;
-
-    transform:translateY(40px) scale(.96);
-
-    background:#fff;
-
-    padding:35px;
-
-    border-radius:28px;
-
-    box-shadow:0 20px 55px rgba(15,23,42,.08);
-
-    transition:
-        opacity .8s,
-        transform .8s,
-        box-shadow .4s;
-
-    position:relative;
-
-}
-
-/* Delay per kotak agar muncul bergantian */
-.timeline-item:nth-child(1) .timeline-content{
-    transition-delay:.05s;
-}
-
-.timeline-item:nth-child(2) .timeline-content{
-    transition-delay:.15s;
-}
-
-.timeline-item:nth-child(3) .timeline-content{
-    transition-delay:.25s;
-}
-
-.timeline-item:nth-child(4) .timeline-content{
-    transition-delay:.35s;
-}
 .experience{
-
     position:relative;
-
-    background:linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #f6fbff 100%
-    );
-
+    padding:120px 0;
     overflow:hidden;
 
+    background:linear-gradient(
+        -45deg,
+        #ffffff,
+        #f8fbff,
+        #eef7ff,
+        #ffffff
+    );
+
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
 }
+
+@keyframes bgMove{
+
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+
+}
+
+/* Background Glow */
 
 .experience::before{
 
@@ -2637,17 +2608,41 @@ RESPONSIVE
 
     position:absolute;
 
-    width:600px;
-
-    height:600px;
+    width:650px;
+    height:650px;
 
     border-radius:50%;
 
-    background:rgba(37,99,235,.06);
+    background:radial-gradient(
+        rgba(37,99,235,.12),
+        transparent 70%
+    );
 
-    right:-250px;
+    top:-250px;
+    left:-250px;
 
-    top:-200px;
+    filter:blur(100px);
+
+}
+
+.experience::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        rgba(6,182,212,.10),
+        transparent 70%
+    );
+
+    right:-180px;
+    bottom:-180px;
 
     filter:blur(90px);
 
@@ -2656,58 +2651,52 @@ RESPONSIVE
 .experience .container{
 
     position:relative;
-
     z-index:2;
 
 }
 
-/* ===============================
-SECTION TITLE
-================================ */
+/*======================================================
+ TITLE
+======================================================*/
 
 .experience .section-title{
 
-    margin-bottom:80px;
+    margin-bottom:90px;
+    text-align:center;
 
 }
 
-.experience .section-title h2{
+.experience h2{
 
     font-size:52px;
-
-    color:var(--dark);
-
     font-weight:800;
+    color:#111827;
 
 }
 
 .experience .section-title p{
 
-    color:var(--gray);
+    margin-top:15px;
+
+    color:#94a3b8;
 
     font-size:18px;
 
-    margin-top:15px;
-
 }
 
-/* ===============================
-TIMELINE
-================================ */
+/*======================================================
+ TIMELINE
+======================================================*/
 
 .timeline{
 
     position:relative;
-
-    max-width:1100px;
-
+    max-width:1200px;
     margin:auto;
-
-    padding:20px 0;
 
 }
 
-/* CENTER LINE */
+/* Garis */
 
 .timeline::before{
 
@@ -2717,27 +2706,25 @@ TIMELINE
 
     left:50%;
 
-    top:0;
+    transform:translateX(-50%);
 
     width:4px;
 
     height:100%;
 
-    transform:translateX(-50%);
+    border-radius:20px;
 
     background:linear-gradient(
         to bottom,
-        #06b6d4,
+        #00c6ff,
         #2563eb
     );
 
-    border-radius:30px;
-
 }
 
-/* ===============================
-ITEM
-================================ */
+/*======================================================
+ ITEM
+======================================================*/
 
 .timeline-item{
 
@@ -2745,7 +2732,7 @@ ITEM
 
     width:50%;
 
-    padding:0 60px 70px;
+    padding:0 60px 90px;
 
 }
 
@@ -2761,81 +2748,127 @@ ITEM
 
 }
 
-/* ===============================
-DOT
-================================ */
+/*======================================================
+ DOT
+======================================================*/
 
-.timeline-item::before{
+.timeline-dot{
+
+    position:absolute;
+
+    top:45px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    border:4px solid #2563eb;
+
+    box-shadow:
+        0 0 25px rgba(37,99,235,.35);
+
+    z-index:5;
+
+}
+
+.timeline-item.left .timeline-dot{
+
+    right:-10px;
+
+}
+
+.timeline-item.right .timeline-dot{
+
+    left:-10px;
+
+}
+
+/*======================================================
+ CARD
+======================================================*/
+
+.timeline-content{
+
+    position:relative;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    box-shadow:
+        0 15px 40px rgba(15,23,42,.08);
+
+    transition:.45s;
+
+    overflow:hidden;
+
+}
+
+/* Border Glow */
+
+.timeline-content::before{
 
     content:"";
 
     position:absolute;
 
-    width:24px;
+    inset:-2px;
 
-    height:24px;
+    border-radius:25px;
 
-    background:#fff;
+    padding:2px;
 
-    border:5px solid var(--primary);
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #00d4ff,
+        #7c3aed
+    );
 
-    border-radius:50%;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
 
-    top:40px;
+    -webkit-mask-composite:xor;
 
-    z-index:2;
+    mask-composite:exclude;
 
-    box-shadow:0 0 25px rgba(37,99,235,.35);
-
-}
-
-.timeline-item.left::before{
-
-    right:-12px;
-
-}
-
-.timeline-item.right::before{
-
-    left:-12px;
-
-}
-
-/* ===============================
-CARD
-================================ */
-
-.timeline-content{
-
-    background:#fff;
-
-    padding:35px;
-
-    border-radius:28px;
-
-    box-shadow:
-
-    0 20px 55px rgba(15,23,42,.08);
+    opacity:0;
 
     transition:.45s;
 
-    position:relative;
-
 }
+
+/* Hover */
 
 .timeline-content:hover{
 
     transform:translateY(-12px);
 
     box-shadow:
-
-    0 25px 60px rgba(37,99,235,.16);
+        0 25px 60px rgba(37,99,235,.18);
 
 }
 
-/* ===============================
-DATE
-================================ */
+.timeline-content:hover::before{
+
+    opacity:1;
+
+}
+
+/*======================================================
+ DATE
+======================================================*/
 
 .timeline-date{
 
@@ -2845,55 +2878,51 @@ DATE
 
     border-radius:40px;
 
-    background:rgba(37,99,235,.08);
+    background:#edf5ff;
 
-    color:var(--primary);
+    color:#2563eb;
 
-    font-size:14px;
+    font-size:13px;
 
     font-weight:600;
 
-    margin-bottom:18px;
+    margin-bottom:20px;
 
 }
 
-/* ===============================
-TEXT
-================================ */
+/*======================================================
+ TEXT
+======================================================*/
 
 .timeline-content h3{
 
-    font-size:28px;
+    font-size:30px;
 
-    color:var(--dark);
+    color:#111827;
 
-    margin-bottom:8px;
+    margin-bottom:10px;
 
 }
 
 .timeline-content h4{
 
-    color:#06b6d4;
-
-    font-size:18px;
+    color:#0ea5e9;
 
     margin-bottom:18px;
-
-    font-weight:600;
 
 }
 
 .timeline-content p{
 
-    color:var(--gray);
+    color:#64748b;
 
-    line-height:1.9;
+    line-height:1.8;
 
 }
 
-/* ===============================
-ARROW
-================================ */
+/*======================================================
+ ARROW
+======================================================*/
 
 .timeline-item.left .timeline-content::after{
 
@@ -2901,15 +2930,15 @@ ARROW
 
     position:absolute;
 
-    top:42px;
+    top:40px;
 
-    right:-18px;
+    right:-15px;
 
-    border-width:12px 0 12px 18px;
+    border-width:12px 0 12px 15px;
 
     border-style:solid;
 
-    border-color:transparent transparent transparent #fff;
+    border-color:transparent transparent transparent rgba(255,255,255,.9);
 
 }
 
@@ -2919,93 +2948,55 @@ ARROW
 
     position:absolute;
 
-    top:42px;
+    top:40px;
 
-    left:-18px;
+    left:-15px;
 
-    border-width:12px 18px 12px 0;
+    border-width:12px 15px 12px 0;
 
     border-style:solid;
 
-    border-color:transparent #fff transparent transparent;
+    border-color:transparent rgba(255,255,255,.9) transparent transparent;
 
 }
 
-/* ===============================
-ANIMATION
-================================ */
+/*======================================================
+ RESPONSIVE
+======================================================*/
 
-.timeline-item{
-
-    transform:translateY(80px);
-
-    animation:timelineFade .9s forwards;
-
-}
-
-.timeline-item:nth-child(2){
-
-    animation-delay:.15s;
-
-}
-
-.timeline-item:nth-child(3){
-
-    animation-delay:.3s;
-
-}
-
-.timeline-item:nth-child(4){
-
-    animation-delay:.45s;
-
-}
-
-@keyframes timelineFade{
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* ===============================
-RESPONSIVE
-================================ */
-
-@media(max-width:992px){
+@media(max-width:991px){
 
 .timeline::before{
 
-    left:30px;
+left:25px;
 
 }
 
 .timeline-item{
 
-    width:100%;
+width:100%;
 
-    left:0!important;
+left:0!important;
 
-    padding-left:80px;
+padding-left:70px;
 
-    padding-right:0;
+padding-right:0;
+
+padding-bottom:60px;
 
 }
 
-.timeline-item::before{
+.timeline-dot{
 
-    left:18px!important;
+left:15px!important;
+
+right:auto!important;
 
 }
 
 .timeline-content::after{
 
-    display:none;
+display:none;
 
 }
 
@@ -3013,25 +3004,24 @@ RESPONSIVE
 
 @media(max-width:768px){
 
+.experience h2{
+
+font-size:38px;
+
+}
+
 .timeline-content{
 
-    padding:28px;
+padding:28px;
 
 }
 
 .timeline-content h3{
 
-    font-size:24px;
+font-size:24px;
 
 }
 
-.timeline-content h4{
-
-    font-size:16px;
-
-}
-
-}
 /* =====================================================
    FEATURED PROJECTS
 ===================================================== */
