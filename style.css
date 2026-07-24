@@ -453,16 +453,12 @@ HERO
 
 .hero-image img{
 
-    width:420px;
-
+    width:100%;
+    max-width:420px;
     margin:auto;
-
     border-radius:50%;
-
     border:8px solid white;
-
     box-shadow:0 25px 60px rgba(0,0,0,.15);
-
     animation:floating 4s ease-in-out infinite;
 
 }
@@ -533,17 +529,6 @@ STATISTICS
 
 }
 
-.stat-card p{
-
-    color:var(--gray);
-
-}
-
-
-/* =======================================================
-   PART 2
-   ABOUT
-=======================================================*/
 
 /* =======================================================
    PART 2
@@ -858,9 +843,7 @@ STATISTICS
 .project-card img{
 
     width:100%;
-
-    height:220px;
-
+    height:230px;
     object-fit:cover;
 
 }
@@ -1046,11 +1029,9 @@ STATISTICS
 }
 
 .certificate-card img{
-
+   
     width:100%;
-
-    height:220px;
-
+    height:230px;
     object-fit:cover;
 
 }
@@ -1329,55 +1310,22 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-.navbar{
-
-display:none;
 
 }
+   
+@keyframes fadeDown{
 
-.menu-btn{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
 
-display:block;
-
-}
-
-.hero h1{
-
-font-size:42px;
-
-}
-
-.hero-image img{
-
-width:280px;
-
-}
-
-.section-title h2{
-
-font-size:34px;
-
-}
-
-.hero-buttons{
-
-flex-direction:column;
-
-}
-
-.about-info{
-
-grid-template-columns:1fr;
-
-}
-
-.stats-grid{
-
-grid-template-columns:1fr;
-
-}
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 
 }
 
@@ -1406,5 +1354,177 @@ border-radius:20px;
 background:var(--primary);
 
 color:white;
+
+}
+
+.header.sticky{
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.navbar a.active{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+   .project-card,
+.skill-card,
+.certificate-card,
+.patent-card,
+.contact-card,
+.education-card{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:.7s;
+
+}
+
+.project-card.show,
+.skill-card.show,
+.certificate-card.show,
+.patent-card.show,
+.contact-card.show,
+.education-card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+    .navbar{
+        display:none;
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:#ffffff;
+        box-shadow:0 10px 30px rgba(0,0,0,.1);
+        padding:20px 0;
+        z-index:999;
+        animation:fadeDown .3s ease;
+    }
+
+    .navbar.active{
+        display:block;
+    }
+
+    .navbar ul{
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+    }
+
+    .navbar ul li{
+        width:100%;
+        text-align:center;
+    }
+
+    .navbar ul li a{
+        display:block;
+        padding:12px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero-image img{
+        width:280px;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .about-info{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+/* ===========================================
+BACK TO TOP
+=========================================== */
+
+.back-to-top{
+
+position:fixed;
+
+right:30px;
+
+bottom:30px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:var(--gradient);
+
+color:white;
+
+font-size:20px;
+
+cursor:pointer;
+
+box-shadow:var(--shadow);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:999;
+
+}
+
+.back-to-top.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.back-to-top:hover{
+
+transform:translateY(-5px);
+
+}
+.footer p{
+
+    margin-top:15px;
+
+}
+
+.footer h3{
+
+    font-size:28px;
 
 }
