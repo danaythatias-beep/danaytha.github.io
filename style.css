@@ -2579,13 +2579,26 @@ RESPONSIVE
 ===================================== */
 
 .timeline-content{
-    opacity:0;
-    transform:translateY(40px) scale(0.96);
+
+    opacity:100;
+
+    transform:translateY(40px) scale(.96);
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    box-shadow:0 20px 55px rgba(15,23,42,.08);
+
     transition:
-        opacity .8s ease,
-        transform .8s cubic-bezier(.22,1,.36,1);
-    will-change:opacity, transform;
-}
+        opacity .8s,
+        transform .8s,
+        box-shadow .4s;
+
+    position:relative;
+
 }
 
 /* Delay per kotak agar muncul bergantian */
@@ -2923,8 +2936,6 @@ ANIMATION
 ================================ */
 
 .timeline-item{
-
-    opacity:0;
 
     transform:translateY(80px);
 
