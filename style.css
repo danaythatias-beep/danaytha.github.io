@@ -1611,7 +1611,7 @@ FLOATING
 
     position:relative;
 
-    background:#f6fbff;
+    background:#042234;
 
     overflow:hidden;
 
@@ -1709,7 +1709,7 @@ IMAGE
 
     box-shadow:
 
-    0 30px 70px rgba(0,0,0,.25);
+    0 30px 70px rgba(0,0,0,.85);
 
     transition:.45s;
 
@@ -1757,7 +1757,7 @@ CONTENT
 
     margin-top:8px;
 
-    color:var(--dark);
+    color:#d7d7d7;
 
     font-weight:800;
 
@@ -2315,7 +2315,7 @@ TITLE
 
     font-size:30px;
 
-    color:var(--dark);
+    color:#ffffff;
 
     margin-bottom:25px;
 
@@ -2325,7 +2325,7 @@ TITLE
 
 .about-content p{
 
-    color:#64748b;
+    color:#cbcbcb;
 
     line-height:1.9;
 
@@ -2345,7 +2345,7 @@ CORE TITLE
 
     margin-bottom:30px;
 
-    color:var(--dark);
+    color:#ffffff;
 
     font-size:28px;
 
