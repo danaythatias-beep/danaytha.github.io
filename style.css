@@ -616,7 +616,7 @@ Typography
 
 .hero-image-card img{
 
-    width:100%;
+    width:150%;
 
     height:auto;
 
@@ -1424,7 +1424,7 @@ INTRO
 
     color:#8fe4ff;
 
-    margin-bottom:20px;
+    margin-bottom:-20px;
 
     font-size:24px;
 
