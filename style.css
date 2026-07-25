@@ -613,19 +613,6 @@ Layout
 Glass Card
 Typography
 =========================================================*/
-.hero-image-card{
-
-    width:500px;
-
-    background:transparent;
-
-    border:none;
-
-    box-shadow:none;
-
-    overflow:visible;
-
-}
 
 .hero-image-card img{
 
