@@ -827,7 +827,7 @@ BIG TITLE
 
 .hero-heading{
 
-    margin-bottom:0;
+    margin-bottom:-60px;
 
 }
 
@@ -900,7 +900,7 @@ INTRO
 
     color:#ffffff;
 
-    margin-bottom:8px;
+    margin-bottom:-30px;
 
 }
 
@@ -1579,7 +1579,7 @@ IMAGE
 .hero-image img{
 
     width:800px;      /* bisa 600px kalau ingin lebih besar */
-    max-width:100%;
+    max-width:200%;
     height:auto;
 
     object-fit:contain;
