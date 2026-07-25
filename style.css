@@ -2609,34 +2609,34 @@ RESPONSIVE
 
 }
 /*======================================================
-  EXPERIENCE SECTION
+    EXPERIENCE SECTION
 ======================================================*/
 
 .experience{
-    position: relative;
-    padding: 120px 0;
-    overflow: hidden;
+    position:relative;
+    overflow:hidden;
+    padding:120px 0;
 
     background:
-        radial-gradient(circle at 15% 20%,
-            rgba(0,212,255,.12) 0%,
-            transparent 28%),
+        radial-gradient(circle at 15% 15%,
+            rgba(0,212,255,.08),
+            transparent 30%),
 
         radial-gradient(circle at 85% 80%,
-            rgba(124,58,237,.12) 0%,
+            rgba(124,58,237,.08),
             transparent 30%),
 
         linear-gradient(
             180deg,
-            #071321 0%,
-            #0b1d34 45%,
-            #08172d 100%
+            #071323 0%,
+            #0b1930 45%,
+            #071323 100%
         );
 }
 
-/*======================================
-  BACKGROUND GLOW
-======================================*/
+/*======================================================
+BACKGROUND GLOW
+======================================================*/
 
 .experience::before{
 
@@ -2644,13 +2644,13 @@ RESPONSIVE
 
     position:absolute;
 
-    width:700px;
-    height:700px;
+    width:650px;
+    height:650px;
+
+    top:-250px;
+    left:-220px;
 
     border-radius:50%;
-
-    top:-280px;
-    left:-250px;
 
     background:
         radial-gradient(
@@ -2660,7 +2660,7 @@ RESPONSIVE
 
     filter:blur(100px);
 
-    animation:glowMove1 12s ease-in-out infinite alternate;
+    animation:glowLeft 10s ease-in-out infinite alternate;
 
 }
 
@@ -2673,10 +2673,10 @@ RESPONSIVE
     width:550px;
     height:550px;
 
-    border-radius:50%;
-
     right:-180px;
     bottom:-180px;
+
+    border-radius:50%;
 
     background:
         radial-gradient(
@@ -2686,24 +2686,65 @@ RESPONSIVE
 
     filter:blur(90px);
 
-    animation:glowMove2 14s ease-in-out infinite alternate;
+    animation:glowRight 12s ease-in-out infinite alternate;
 
 }
 
-/*======================================
-  CONTAINER
-======================================*/
+@keyframes glowLeft{
+
+    from{
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    to{
+
+        transform:
+            translate(40px,25px)
+            scale(1.15);
+
+    }
+
+}
+
+@keyframes glowRight{
+
+    from{
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    to{
+
+        transform:
+            translate(-30px,-30px)
+            scale(1.15);
+
+    }
+
+}
+
+/*======================================================
+CONTAINER
+======================================================*/
 
 .experience .container{
 
     position:relative;
+
     z-index:2;
 
 }
 
-/*======================================
-  SECTION TITLE
-======================================*/
+/*======================================================
+SECTION TITLE
+======================================================*/
 
 .experience .section-title{
 
@@ -2715,35 +2756,30 @@ RESPONSIVE
 
 .experience .section-title h2{
 
-    font-size:48px;
+    font-size:52px;
 
     font-weight:800;
 
-    color:#ffffff;
+    color:#fff;
 
-    letter-spacing:.5px;
+    margin-bottom:15px;
 
     text-shadow:
-
-        0 0 18px rgba(111,211,255,.25);
+        0 0 25px rgba(111,211,255,.18);
 
 }
 
 .experience .section-title p{
 
-    margin-top:16px;
-
-    color:#9eb6d5;
+    color:#9FB7D8;
 
     font-size:18px;
 
-    line-height:1.7;
+    letter-spacing:.5px;
 
 }
 
-/*======================================
-  SMALL DECORATION
-======================================*/
+/* garis kecil */
 
 .experience .section-title::after{
 
@@ -2770,52 +2806,8 @@ RESPONSIVE
 
 }
 
-/*======================================
-  BACKGROUND ANIMATION
-======================================*/
-
-@keyframes glowMove1{
-
-    0%{
-
-        transform:
-            translate(0,0)
-            scale(1);
-
-    }
-
-    100%{
-
-        transform:
-            translate(40px,30px)
-            scale(1.15);
-
-    }
-
-}
-
-@keyframes glowMove2{
-
-    0%{
-
-        transform:
-            translate(0,0)
-            scale(1);
-
-    }
-
-    100%{
-
-        transform:
-            translate(-30px,-20px)
-            scale(1.12);
-
-    }
-
-}
-
 /*======================================================
-  TIMELINE
+TIMELINE
 ======================================================*/
 
 .timeline{
@@ -2824,15 +2816,15 @@ RESPONSIVE
 
     max-width:1200px;
 
-    margin:0 auto;
+    margin:auto;
 
     padding:40px 0;
 
 }
 
-/*======================================
-  TIMELINE CENTER LINE
-======================================*/
+/*======================================================
+CENTER LINE
+======================================================*/
 
 .timeline::before{
 
@@ -2846,13 +2838,14 @@ RESPONSIVE
 
     bottom:0;
 
-    transform:translateX(-50%);
-
     width:4px;
+
+    transform:translateX(-50%);
 
     border-radius:50px;
 
     background:
+
         linear-gradient(
             to bottom,
             #00d4ff,
@@ -2861,14 +2854,15 @@ RESPONSIVE
         );
 
     box-shadow:
-        0 0 15px rgba(0,212,255,.45),
-        0 0 35px rgba(37,99,235,.25);
+
+        0 0 15px rgba(0,212,255,.55),
+        0 0 35px rgba(37,99,235,.35);
 
 }
 
-/*======================================
-  TIMELINE ITEM
-======================================*/
+/*======================================================
+TIMELINE ITEM
+======================================================*/
 
 .timeline-item{
 
@@ -2888,9 +2882,7 @@ RESPONSIVE
 
 }
 
-/*======================================
-  LEFT
-======================================*/
+/* kiri */
 
 .timeline-item.left{
 
@@ -2900,9 +2892,7 @@ RESPONSIVE
 
 }
 
-/*======================================
-  RIGHT
-======================================*/
+/* kanan */
 
 .timeline-item.right{
 
@@ -2912,9 +2902,9 @@ RESPONSIVE
 
 }
 
-/*======================================
-  CONNECTOR LINE
-======================================*/
+/*======================================================
+CONNECTOR
+======================================================*/
 
 .timeline-item.left::after{
 
@@ -2922,18 +2912,19 @@ RESPONSIVE
 
     position:absolute;
 
-    top:56px;
+    top:58px;
 
     right:20px;
 
     width:46px;
-
-    height:2px;
+    height:3px;
 
     background:#00d4ff;
 
+    border-radius:30px;
+
     box-shadow:
-        0 0 10px rgba(0,212,255,.8);
+        0 0 12px rgba(0,212,255,.9);
 
 }
 
@@ -2943,33 +2934,33 @@ RESPONSIVE
 
     position:absolute;
 
-    top:56px;
+    top:58px;
 
     left:20px;
 
     width:46px;
-
-    height:2px;
+    height:3px;
 
     background:#00d4ff;
 
+    border-radius:30px;
+
     box-shadow:
-        0 0 10px rgba(0,212,255,.8);
+        0 0 12px rgba(0,212,255,.9);
 
 }
 
-/*======================================
-  TIMELINE DOT
-======================================*/
+/*======================================================
+TIMELINE DOT
+======================================================*/
 
 .timeline-dot{
 
     position:absolute;
 
-    top:45px;
+    top:47px;
 
     width:24px;
-
     height:24px;
 
     border-radius:50%;
@@ -2978,43 +2969,37 @@ RESPONSIVE
 
     border:5px solid #00d4ff;
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
     z-index:10;
 
     box-shadow:
 
-        0 0 10px rgba(0,212,255,.9),
-        0 0 25px rgba(0,212,255,.55),
-        0 0 45px rgba(37,99,235,.4);
+        0 0 12px #00d4ff,
+        0 0 28px rgba(0,212,255,.6),
+        0 0 45px rgba(37,99,235,.35);
 
-    animation:pulseDot 2.8s ease infinite;
+    animation:dotPulse 2.6s infinite;
 
 }
-
-/* Titik kecil */
 
 .timeline-dot::after{
 
     content:"";
 
-    width:6px;
+    position:absolute;
 
+    width:6px;
     height:6px;
+
+    background:#fff;
 
     border-radius:50%;
 
-    background:white;
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
 
 }
-
-/*======================================
-  DOT POSITION
-======================================*/
 
 .timeline-item.left .timeline-dot{
 
@@ -3028,20 +3013,15 @@ RESPONSIVE
 
 }
 
-/*======================================
-  DOT ANIMATION
-======================================*/
+/*======================================================
+DOT ANIMATION
+======================================================*/
 
-@keyframes pulseDot{
+@keyframes dotPulse{
 
     0%{
 
         transform:scale(1);
-
-        box-shadow:
-
-            0 0 10px rgba(0,212,255,.9),
-            0 0 25px rgba(0,212,255,.55);
 
     }
 
@@ -3051,8 +3031,8 @@ RESPONSIVE
 
         box-shadow:
 
-            0 0 20px rgba(0,212,255,1),
-            0 0 45px rgba(0,212,255,.85);
+            0 0 18px #00d4ff,
+            0 0 40px rgba(0,212,255,.85);
 
     }
 
@@ -3060,17 +3040,12 @@ RESPONSIVE
 
         transform:scale(1);
 
-        box-shadow:
-
-            0 0 10px rgba(0,212,255,.9),
-            0 0 25px rgba(0,212,255,.55);
-
     }
 
 }
 
-/*======================================================
-  TIMELINE CARD
+    /*======================================================
+    EXPERIENCE CARD
 ======================================================*/
 
 .timeline-content{
@@ -3080,37 +3055,37 @@ RESPONSIVE
     width:100%;
     max-width:480px;
 
-    padding:35px;
+    overflow:hidden;
+
+    padding:36px;
 
     border-radius:28px;
-
-    overflow:hidden;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.12),
+            rgba(255,255,255,.10),
             rgba(255,255,255,.05)
         );
 
     border:1px solid rgba(255,255,255,.10);
 
-    -webkit-backdrop-filter:blur(18px);
-    backdrop-filter:blur(18px);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
 
     box-shadow:
-        0 20px 45px rgba(0,0,0,.25);
+        0 20px 45px rgba(0,0,0,.28);
 
     transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
+        transform .45s ease,
+        box-shadow .45s ease,
+        border-color .45s ease;
 
 }
 
-/*======================================
-  GLOW BORDER
-======================================*/
+/*======================================================
+ANIMATED BORDER
+======================================================*/
 
 .timeline-content::before{
 
@@ -3135,7 +3110,7 @@ RESPONSIVE
 
     background-size:300%;
 
-    animation:borderMove 6s linear infinite;
+    animation:borderFlow 6s linear infinite;
 
     opacity:0;
 
@@ -3157,209 +3132,7 @@ RESPONSIVE
 
 }
 
-/*======================================
-  FLOATING GLOW
-======================================*/
-
-.timeline-content::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:260px;
-    height:260px;
-
-    top:-130px;
-    right:-120px;
-
-    background:
-        radial-gradient(
-            rgba(0,212,255,.28),
-            transparent 70%
-        );
-
-    filter:blur(45px);
-
-    opacity:.25;
-
-    transition:.45s;
-
-}
-
-/*======================================
-  HOVER
-======================================*/
-
-.timeline-content:hover{
-
-    transform:
-        translateY(-10px);
-
-    border-color:
-        rgba(111,211,255,.35);
-
-    box-shadow:
-
-        0 25px 60px rgba(0,212,255,.18),
-
-        0 0 35px rgba(37,99,235,.18);
-
-}
-
-.timeline-content:hover::before{
-
-    opacity:1;
-
-}
-
-.timeline-content:hover::after{
-
-    opacity:.8;
-
-    transform:scale(1.15);
-
-}
-
-/*======================================
-  SHINE EFFECT
-======================================*/
-
-.timeline-content .shine{
-
-    position:absolute;
-
-    inset:0;
-
-    overflow:hidden;
-
-    border-radius:28px;
-
-    pointer-events:none;
-
-}
-
-.timeline-content .shine::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-150%;
-
-    left:-80%;
-
-    width:70%;
-
-    height:300%;
-
-    transform:rotate(25deg);
-
-    background:
-
-        linear-gradient(
-
-            transparent,
-
-            rgba(255,255,255,.18),
-
-            transparent
-
-        );
-
-    transition:1s;
-
-}
-
-.timeline-content:hover .shine::before{
-
-    left:150%;
-
-}
-
-/*======================================
-  DATE
-======================================*/
-
-.timeline-date{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:8px 18px;
-
-    margin-bottom:20px;
-
-    border-radius:40px;
-
-    background:
-        rgba(0,212,255,.10);
-
-    border:1px solid
-        rgba(0,212,255,.20);
-
-    color:#7ddcff;
-
-    font-size:13px;
-
-    font-weight:600;
-
-}
-
-/*======================================
-  TITLE
-======================================*/
-
-.timeline-content h3{
-
-    margin-bottom:10px;
-
-    font-size:28px;
-
-    font-weight:700;
-
-    color:#ffffff;
-
-}
-
-/*======================================
-  COMPANY
-======================================*/
-
-.timeline-content h4{
-
-    margin-bottom:18px;
-
-    color:#67d2ff;
-
-    font-size:16px;
-
-    font-weight:600;
-
-}
-
-/*======================================
-  DESCRIPTION
-======================================*/
-
-.timeline-content p{
-
-    color:#c8d8eb;
-
-    line-height:1.8;
-
-    font-size:15px;
-
-}
-
-/*======================================
-  BORDER ANIMATION
-======================================*/
-
-@keyframes borderMove{
+@keyframes borderFlow{
 
     from{
 
@@ -3376,10 +3149,257 @@ RESPONSIVE
 }
 
 /*======================================================
-  EXPERIENCE BADGES
+FLOATING GLOW
 ======================================================*/
 
-.experience-badges{
+.timeline-content::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    right:-120px;
+    top:-120px;
+
+    background:
+        radial-gradient(
+
+            rgba(0,212,255,.28),
+
+            transparent 70%
+
+        );
+
+    filter:blur(45px);
+
+    opacity:.28;
+
+    transition:.45s;
+
+}
+
+/*======================================================
+HOVER
+======================================================*/
+
+.timeline-content:hover{
+
+    transform:
+
+        translateY(-12px);
+
+    border-color:
+
+        rgba(111,211,255,.35);
+
+    box-shadow:
+
+        0 25px 65px rgba(0,212,255,.18),
+
+        0 0 40px rgba(37,99,235,.22);
+
+}
+
+.timeline-content:hover::before{
+
+    opacity:1;
+
+}
+
+.timeline-content:hover::after{
+
+    opacity:.85;
+
+    transform:scale(1.2);
+
+}
+
+/*======================================================
+SHAKE EFFECT
+======================================================*/
+
+.timeline-content:hover{
+
+    animation:cardShake .45s ease;
+
+}
+
+@keyframes cardShake{
+
+    0%{
+
+        transform:translateY(-10px) rotate(0deg);
+
+    }
+
+    25%{
+
+        transform:translateY(-10px) rotate(-1deg);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px) rotate(1deg);
+
+    }
+
+    75%{
+
+        transform:translateY(-10px) rotate(-.6deg);
+
+    }
+
+    100%{
+
+        transform:translateY(-12px) rotate(0deg);
+
+    }
+
+}
+
+/*======================================================
+SHINE EFFECT
+======================================================*/
+
+.shine{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    pointer-events:none;
+
+}
+
+.shine::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-90%;
+
+    width:70%;
+
+    height:280%;
+
+    transform:rotate(25deg);
+
+    background:
+
+        linear-gradient(
+
+            transparent,
+
+            rgba(255,255,255,.22),
+
+            transparent
+
+        );
+
+    transition:1s;
+
+}
+
+.timeline-content:hover .shine::before{
+
+    left:160%;
+
+}
+
+/*======================================================
+DATE
+======================================================*/
+
+.timeline-date{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 18px;
+
+    margin-bottom:20px;
+
+    border-radius:50px;
+
+    background:rgba(0,212,255,.10);
+
+    border:1px solid rgba(0,212,255,.20);
+
+    color:#7DDCFF;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/*======================================================
+TITLE
+======================================================*/
+
+.timeline-content h3{
+
+    font-size:28px;
+
+    color:#ffffff;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+    line-height:1.3;
+
+}
+
+/*======================================================
+COMPANY
+======================================================*/
+
+.timeline-content h4{
+
+    font-size:16px;
+
+    color:#66D3FF;
+
+    font-weight:600;
+
+    margin-bottom:22px;
+
+}
+
+/*======================================================
+DESCRIPTION
+======================================================*/
+
+.timeline-content p{
+
+    color:#C7D8EB;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+    /*======================================================
+    EXPERIENCE SKILLS
+======================================================*/
+
+.experience-skills{
 
     display:flex;
 
@@ -3391,11 +3411,11 @@ RESPONSIVE
 
 }
 
-/*======================================
-  BADGE
-======================================*/
+/*======================================================
+SKILL CHIP
+======================================================*/
 
-.badge{
+.skill-chip{
 
     position:relative;
 
@@ -3403,61 +3423,65 @@ RESPONSIVE
 
     align-items:center;
 
-    justify-content:center;
+    padding:10px 18px 10px 34px;
 
-    gap:8px;
-
-    padding:9px 18px;
-
-    border-radius:999px;
+    border-radius:50px;
 
     overflow:hidden;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.10),
-            rgba(255,255,255,.05)
-        );
+    cursor:pointer;
 
-    border:1px solid rgba(111,211,255,.18);
+    font-size:13px;
 
-    color:#dbeafe;
+    font-weight:500;
 
-    font-size:12px;
-
-    font-weight:600;
+    color:#d8e6f5;
 
     letter-spacing:.3px;
 
-    cursor:default;
+    background:
+
+        rgba(255,255,255,.05);
+
+    border:1px solid
+
+        rgba(255,255,255,.08);
 
     transition:
 
-        transform .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease,
-        background .35s ease;
+        .35s;
 
 }
 
-/*======================================
-  BADGE ICON
-======================================*/
+/*======================================================
+DOT
+======================================================*/
 
-.badge i{
+.skill-chip::before{
 
-    color:#6FD3FF;
+    content:"";
 
-    font-size:12px;
+    position:absolute;
+
+    left:15px;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#6b7280;
+
+    transition:.35s;
 
 }
 
-/*======================================
-  GRADIENT GLOW
-======================================*/
+/*======================================================
+GLOW
+======================================================*/
 
-.badge::before{
+.skill-chip::after{
 
     content:"";
 
@@ -3465,17 +3489,19 @@ RESPONSIVE
 
     inset:0;
 
+    border-radius:50px;
+
     background:
 
         linear-gradient(
 
             135deg,
 
-            rgba(0,212,255,.18),
+            rgba(0,212,255,.15),
 
-            rgba(37,99,235,.10),
+            rgba(37,99,235,.08),
 
-            rgba(124,58,237,.18)
+            rgba(124,58,237,.12)
 
         );
 
@@ -3485,199 +3511,216 @@ RESPONSIVE
 
 }
 
-/*======================================
-  SHINE
-======================================*/
+/*======================================================
+HOVER
+======================================================*/
 
-.badge::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:-120%;
-
-    top:0;
-
-    width:60%;
-
-    height:100%;
-
-    transform:skewX(-25deg);
-
-    background:
-
-        linear-gradient(
-
-            transparent,
-
-            rgba(255,255,255,.45),
-
-            transparent
-
-        );
-
-    transition:1s;
-
-}
-
-/*======================================
-  HOVER
-======================================*/
-
-.badge:hover{
+.skill-chip:hover{
 
     transform:
 
-        translateY(-4px);
+        translateY(-3px);
 
-    border-color:#6FD3FF;
+    color:#ffffff;
+
+    border-color:
+
+        rgba(0,212,255,.45);
 
     box-shadow:
 
-        0 0 18px rgba(0,212,255,.30),
+        0 0 18px rgba(0,212,255,.18),
 
-        0 8px 22px rgba(0,0,0,.22);
+        0 8px 25px rgba(0,0,0,.18);
 
 }
 
-.badge:hover::before{
+.skill-chip:hover::before{
+
+    background:#00d4ff;
+
+    box-shadow:
+
+        0 0 8px #00d4ff,
+
+        0 0 20px rgba(0,212,255,.8);
+
+}
+
+.skill-chip:hover::after{
 
     opacity:1;
 
 }
 
-.badge:hover::after{
+/*======================================================
+ACTIVE
+======================================================*/
 
-    left:170%;
+.skill-chip:active{
 
-}
+    transform:
 
-/*======================================
-  STAGGER ANIMATION
-======================================*/
-
-.badge{
-
-    opacity:0;
-
-    transform:translateY(15px);
-
-    animation:badgeFade .6s forwards;
-
-}
-
-.badge:nth-child(1){animation-delay:.05s;}
-.badge:nth-child(2){animation-delay:.10s;}
-.badge:nth-child(3){animation-delay:.15s;}
-.badge:nth-child(4){animation-delay:.20s;}
-.badge:nth-child(5){animation-delay:.25s;}
-.badge:nth-child(6){animation-delay:.30s;}
-
-@keyframes badgeFade{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(15px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
+        scale(.96);
 
 }
 
 /*======================================================
-  SCROLL REVEAL
+ANIMATION
 ======================================================*/
 
-/*======================================
-  SCROLL REVEAL
-======================================*/
-
-.timeline-item{
+.skill-chip{
 
     opacity:0;
 
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
+    animation:chipFade .55s forwards;
 
 }
 
-.timeline-item.left{
+.skill-chip:nth-child(1){
 
-    transform:translateX(-80px);
-
-}
-
-.timeline-item.right{
-
-    transform:translateX(80px);
+animation-delay:.05s;
 
 }
 
-.timeline-item.show{
+.skill-chip:nth-child(2){
 
-    opacity:1;
-
-    transform:translateX(0);
+animation-delay:.10s;
 
 }
 
-/*======================================
-  STAGGER DELAY
-======================================*/
+.skill-chip:nth-child(3){
 
-.timeline-item:nth-child(1){
-
-    transition-delay:.05s;
+animation-delay:.15s;
 
 }
 
-.timeline-item:nth-child(2){
+.skill-chip:nth-child(4){
 
-    transition-delay:.15s;
-
-}
-
-.timeline-item:nth-child(3){
-
-    transition-delay:.25s;
+animation-delay:.20s;
 
 }
 
-.timeline-item:nth-child(4){
+.skill-chip:nth-child(5){
 
-    transition-delay:.35s;
-
-}
-
-.timeline-item:nth-child(5){
-
-    transition-delay:.45s;
+animation-delay:.25s;
 
 }
 
-.timeline-item:nth-child(6){
+.skill-chip:nth-child(6){
 
-    transition-delay:.55s;
+animation-delay:.30s;
+
+}
+
+@keyframes chipFade{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
 
 }
 
 /*======================================================
-  EXPERIENCE RESPONSIVE
+DATE
+======================================================*/
+
+.timeline-date{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 18px;
+
+    border-radius:40px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#7fdcff;
+
+    background:
+
+        rgba(0,212,255,.08);
+
+    border:1px solid
+
+        rgba(0,212,255,.15);
+
+}
+
+/*======================================================
+TITLE
+======================================================*/
+
+.timeline-content h3{
+
+    margin-bottom:10px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+/*======================================================
+COMPANY
+======================================================*/
+
+.timeline-content h4{
+
+    margin-bottom:10px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#6fd3ff;
+
+}
+
+/*======================================================
+DESCRIPTION
+======================================================*/
+
+.timeline-content p{
+
+    margin-top:18px;
+
+    color:#bfd3e8;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+    /*======================================================
+    RESPONSIVE
 ======================================================*/
 
 /*======================================
-  Laptop
+Laptop
 ======================================*/
 
 @media (max-width:1200px){
@@ -3697,22 +3740,46 @@ RESPONSIVE
 }
 
 /*======================================
-  Tablet
+Tablet
 ======================================*/
 
 @media (max-width:991px){
 
-    /* Garis pindah ke kiri */
+    .experience{
+
+        padding:100px 0;
+
+    }
+
+    .experience .section-title{
+
+        margin-bottom:70px;
+
+    }
+
+    .experience .section-title h2{
+
+        font-size:42px;
+
+    }
+
+    /* Timeline */
+
+    .timeline{
+
+        padding-top:20px;
+
+    }
 
     .timeline::before{
 
-        left:30px;
+        left:32px;
 
         transform:none;
 
     }
 
-    /* Semua item menjadi satu kolom */
+    /* Semua menjadi satu kolom */
 
     .timeline-item{
 
@@ -3720,7 +3787,7 @@ RESPONSIVE
 
         margin-left:0;
 
-        padding-left:85px;
+        padding-left:90px;
 
         padding-right:0;
 
@@ -3733,8 +3800,9 @@ RESPONSIVE
     .timeline-item.left,
     .timeline-item.right{
 
+        padding-left:90px;
+
         padding-right:0;
-        padding-left:85px;
 
     }
 
@@ -3742,21 +3810,21 @@ RESPONSIVE
 
     .timeline-dot{
 
-        left:19px !important;
+        left:20px !important;
 
         right:auto !important;
 
     }
 
-    /* Garis kecil */
+    /* Connector */
 
     .timeline-item::after{
 
-        left:30px !important;
+        left:32px !important;
 
         right:auto !important;
 
-        width:32px;
+        width:34px;
 
     }
 
@@ -3768,10 +3836,18 @@ RESPONSIVE
 
     }
 
+    /* Skills */
+
+    .experience-skills{
+
+        gap:10px;
+
+    }
+
 }
 
 /*======================================
-  Mobile
+Mobile
 ======================================*/
 
 @media (max-width:768px){
@@ -3784,25 +3860,31 @@ RESPONSIVE
 
     .experience .section-title{
 
-        margin-bottom:60px;
+        margin-bottom:55px;
 
     }
 
     .experience .section-title h2{
 
-        font-size:36px;
+        font-size:34px;
 
     }
 
     .experience .section-title p{
 
-        font-size:16px;
+        font-size:15px;
 
     }
 
     .timeline{
 
-        padding-top:20px;
+        padding:10px 0;
+
+    }
+
+    .timeline::before{
+
+        left:22px;
 
     }
 
@@ -3814,15 +3896,10 @@ RESPONSIVE
 
     }
 
-    .timeline::before{
-
-        left:22px;
-
-    }
-
     .timeline-dot{
 
         width:20px;
+
         height:20px;
 
         border-width:4px;
@@ -3841,9 +3918,17 @@ RESPONSIVE
 
     .timeline-content{
 
-        padding:25px;
+        padding:26px;
 
         border-radius:22px;
+
+    }
+
+    .timeline-date{
+
+        font-size:12px;
+
+        padding:7px 15px;
 
     }
 
@@ -3867,32 +3952,36 @@ RESPONSIVE
 
     }
 
-    .timeline-date{
-
-        font-size:12px;
-
-        padding:7px 15px;
-
-    }
-
-    .experience-badges{
+    .experience-skills{
 
         gap:8px;
 
     }
 
-    .badge{
+    .skill-chip{
 
         font-size:11px;
 
-        padding:8px 14px;
+        padding:8px 16px 8px 30px;
+
+    }
+
+    .skill-chip::before{
+
+        width:7px;
+
+        height:7px;
+
+        left:13px;
 
     }
 
 }
 
+    
+
 /*======================================
-  Small Mobile
+Small Mobile
 ======================================*/
 
 @media (max-width:480px){
@@ -3903,25 +3992,29 @@ RESPONSIVE
 
     }
 
-    .timeline-item{
-
-        padding-left:60px;
-
-    }
-
     .timeline::before{
 
         left:18px;
 
     }
 
-    .timeline-dot{
+    .timeline-item{
 
-        left:8px !important;
+        padding-left:60px;
+
+        margin-bottom:35px;
+
+    }
+
+    .timeline-dot{
 
         width:18px;
 
         height:18px;
+
+        border-width:4px;
+
+        left:9px !important;
 
     }
 
@@ -3936,6 +4029,8 @@ RESPONSIVE
     .timeline-content{
 
         padding:22px;
+
+        border-radius:20px;
 
     }
 
@@ -3957,15 +4052,122 @@ RESPONSIVE
 
     }
 
-    .badge{
+    .timeline-date{
+
+        font-size:11px;
+
+        padding:6px 13px;
+
+    }
+
+    .skill-chip{
 
         font-size:10px;
 
-        padding:7px 12px;
+        padding:7px 14px 7px 28px;
+
+    }
+
+    .skill-chip::before{
+
+        left:12px;
+
+        width:6px;
+
+        height:6px;
 
     }
 
 }
+
+    /*====================================
+SCROLL REVEAL
+====================================*/
+
+.timeline-item{
+
+opacity:0;
+
+transition:
+
+opacity .8s ease,
+
+transform .8s ease;
+
+}
+
+.timeline-item.left{
+
+transform:translateX(-80px);
+
+}
+
+.timeline-item.right{
+
+transform:translateX(80px);
+
+}
+
+.timeline-item.show{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+
+
+/*====================================
+MOUSE GLOW
+====================================*/
+
+.timeline-content{
+
+--mouse-x:50%;
+
+--mouse-y:50%;
+
+}
+
+.timeline-content::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(
+
+250px circle at
+
+var(--mouse-x)
+
+var(--mouse-y),
+
+rgba(0,212,255,.12),
+
+transparent 60%
+
+);
+
+opacity:0;
+
+transition:.25s;
+
+}
+
+.timeline-content:hover::after{
+
+opacity:1;
+
+}
+    
 /*=========================================
 FEATURED PROJECTS
 =========================================*/
