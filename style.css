@@ -2608,1194 +2608,375 @@ RESPONSIVE
     font-size:20px;
 
 }
-/*======================================================
-    EXPERIENCE SECTION
-======================================================*/
+/*====================================
+ EDUCATION
+====================================*/
 
-/*======================================================
- EXPERIENCE TIMELINE
-======================================================*/
+.education{
 
-.experience{
-    position:relative;
     padding:120px 0;
-    overflow:hidden;
-
-    background:
-    radial-gradient(circle at 20% 20%,
-    rgba(0,212,255,.18),
-    transparent 35%),
-
-    radial-gradient(circle at 80% 80%,
-    rgba(111,211,255,.15),
-    transparent 35%),
-
-    linear-gradient(135deg,#061525,#0b2238);
-}
-
-
-/* TIMELINE WRAPPER */
-
-.timeline{
-
-    position:relative;
-    max-width:1100px;
-    margin:80px auto;
-
-}
-
-
-/* GARIS TENGAH */
-
-.timeline::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-
-    top:0;
-
-    width:4px;
-
-    height:100%;
-
-    transform:translateX(-50%);
 
     background:
     linear-gradient(
-        to bottom,
-        transparent,
-        #6fd3ff,
+        180deg,
         #ffffff,
-        #6fd3ff,
-        transparent
+        #f5faff
     );
 
-
-    box-shadow:
-    0 0 15px #6fd3ff,
-    0 0 35px rgba(111,211,255,.8);
-
-}
-
-
-/* ITEM */
-
-.timeline-item{
-
     position:relative;
 
-    width:50%;
+}
 
-    padding:30px 50px;
+.education-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
 
 }
 
-
-/* POSISI KIRI */
-
-.timeline-item.left{
-
-    left:0;
-
-    text-align:right;
-
-}
-
-
-/* POSISI KANAN */
-
-.timeline-item.right{
-
-    left:50%;
-
-}
-
-
-
-/* DOT */
-
-.timeline-dot{
-
-    position:absolute;
-
-    top:55px;
-
-    width:22px;
-
-    height:22px;
-
-    background:#ffffff;
-
-    border-radius:50%;
-
-    z-index:3;
-
-
-    box-shadow:
-
-    0 0 0 6px rgba(111,211,255,.25),
-
-    0 0 20px #6fd3ff,
-
-    0 0 40px #6fd3ff;
-
-
-    animation:pulseDot 2s infinite;
-
-}
-
-
-/* DOT KIRI */
-
-.left .timeline-dot{
-
-    right:-11px;
-
-}
-
-
-/* DOT KANAN */
-
-.right .timeline-dot{
-
-    left:-11px;
-
-}
-
-
-
-@keyframes pulseDot{
-
-
-0%{
-
-transform:scale(1);
-
-}
-
-
-50%{
-
-transform:scale(1.25);
-
-}
-
-
-100%{
-
-transform:scale(1);
-
-}
-
-
-}
-
-
-
-/* CARD */
-
-.timeline-content{
-
-
-position:relative;
-
-
-padding:35px;
-
-
-border-radius:25px;
-
-
-background:
-
-rgba(255,255,255,.08);
-
-
-backdrop-filter:
-
-blur(18px);
-
-
-border:
-
-1px solid rgba(255,255,255,.18);
-
-
-box-shadow:
-
-0 20px 50px rgba(0,0,0,.35);
-
-
-overflow:hidden;
-
-
-transition:.5s;
-
-
-}
-
-
-
-/* HOVER */
-
-.timeline-content:hover{
-
-
-transform:
-
-translateY(-10px)
-scale(1.03);
-
-
-border-color:
-
-#6fd3ff;
-
-
-box-shadow:
-
-0 25px 70px rgba(111,211,255,.35);
-
-
-}
-
-
-
-/* SHINE EFFECT */
-
-.shine{
-
-
-position:absolute;
-
-top:-100%;
-
-left:-100%;
-
-width:200%;
-
-height:200%;
-
-
-background:
-
-linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,.25),
-transparent
-);
-
-
-transform:rotate(25deg);
-
-
-animation:shineMove 5s infinite;
-
-
-}
-
-
-
-@keyframes shineMove{
-
-
-0%{
-
-transform:translate(-100%,-100%)
-rotate(25deg);
-
-}
-
-
-100%{
-
-transform:translate(100%,100%)
-rotate(25deg);
-
-}
-
-}
-
-
-
-/* TEXT */
-
-.timeline-date{
-
-display:inline-block;
-
-padding:8px 18px;
-
-border-radius:30px;
-
-background:
-
-rgba(111,211,255,.15);
-
-
-color:#6fd3ff;
-
-
-font-size:14px;
-
-
-margin-bottom:15px;
-
-
-}
-
-
-.timeline-content h3{
-
-
-color:white;
-
-font-size:26px;
-
-margin-bottom:8px;
-
-
-}
-
-
-
-.timeline-content h4{
-
-
-color:#6fd3ff;
-
-margin-bottom:20px;
-
-
-}
-
-
-
-.timeline-content p{
-
-
-color:#dcecff;
-
-line-height:1.8;
-
-}
-
-
-
-/* SKILL CHIP */
-
-
-.experience-skills{
-
-display:flex;
-
-gap:8px;
-
-flex-wrap:wrap;
-
-margin:20px 0;
-
-
-}
-
-
-.skill-chip{
-
-
-padding:7px 15px;
-
-
-border-radius:30px;
-
-
-font-size:13px;
-
-
-background:
-
-rgba(111,211,255,.12);
-
-
-border:
-
-1px solid rgba(111,211,255,.35);
-
-
-color:white;
-
-
-}
-
-/*======================================================
-BACKGROUND GLOW
-======================================================*/
-
-.experience::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:650px;
-    height:650px;
-
-    top:-250px;
-    left:-220px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            rgba(0,212,255,.22),
-            transparent 70%
-        );
-
-    filter:blur(100px);
-
-    animation:glowLeft 10s ease-in-out infinite alternate;
-
-}
-
-.experience::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:550px;
-    height:550px;
-
-    right:-180px;
-    bottom:-180px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            rgba(37,99,235,.18),
-            transparent 70%
-        );
-
-    filter:blur(90px);
-
-    animation:glowRight 12s ease-in-out infinite alternate;
-
-}
-
-@keyframes glowLeft{
-
-    from{
-
-        transform:
-            translate(0,0)
-            scale(1);
-
-    }
-
-    to{
-
-        transform:
-            translate(40px,25px)
-            scale(1.15);
-
-    }
-
-}
-
-@keyframes glowRight{
-
-    from{
-
-        transform:
-            translate(0,0)
-            scale(1);
-
-    }
-
-    to{
-
-        transform:
-            translate(-30px,-30px)
-            scale(1.15);
-
-    }
-
-}
-
-/*======================================================
-CONTAINER
-======================================================*/
-
-.experience .container{
+.education-card{
 
     position:relative;
-
-    z-index:2;
-
-}
-
-/*======================================================
-SECTION TITLE
-======================================================*/
-
-.experience .section-title{
-
-    text-align:center;
-
-    margin-bottom:90px;
-
-}
-
-.experience .section-title h2{
-
-    font-size:52px;
-
-    font-weight:800;
-
-    color:#111827;
-
-    margin-bottom:15px;
-
-    text-shadow:
-        0 0 25px rgba(111,211,255,.18);
-
-}
-
-.experience .section-title p{
-
-    color:#9FB7D8;
-
-    font-size:18px;
-
-    letter-spacing:.5px;
-
-}
-
-/* garis kecil */
-
-.experience .section-title::after{
-
-    content:"";
-
-    display:block;
-
-    width:90px;
-    height:4px;
-
-    margin:22px auto 0;
-
-    border-radius:50px;
-
-    background:linear-gradient(
-        90deg,
-        #00d4ff,
-        #2563eb,
-        #7c3aed
-    );
-
-    box-shadow:
-        0 0 20px rgba(0,212,255,.45);
-
-}
-
-/*======================================================
-TIMELINE
-======================================================*/
-
-.timeline{
-
-    position:relative;
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:40px 0;
-
-}
-
-/*======================================================
-CENTER LINE
-======================================================*/
-
-.timeline::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-
-    top:0;
-
-    bottom:0;
-
-    width:4px;
-
-    transform:translateX(-50%);
-
-    border-radius:50px;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-            #00d4ff,
-            #2563eb,
-            #7c3aed
-        );
-
-    box-shadow:
-
-        0 0 15px rgba(0,212,255,.55),
-        0 0 35px rgba(37,99,235,.35);
-
-}
-
-/*======================================================
-TIMELINE ITEM
-======================================================*/
-
-.timeline-item{
-
-    position:relative;
-
-    width:50%;
-
-    display:flex;
-
-    margin-bottom:90px;
-
-}
-
-.timeline-item:last-child{
-
-    margin-bottom:0;
-
-}
-
-/* kiri */
-
-.timeline-item.left{
-
-    justify-content:flex-end;
-
-    padding-right:70px;
-
-}
-
-/* kanan */
-
-.timeline-item.right{
-
-    margin-left:50%;
-
-    padding-left:70px;
-
-}
-
-/*======================================================
-CONNECTOR
-======================================================*/
-
-.timeline-item.left::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:58px;
-
-    right:20px;
-
-    width:46px;
-    height:3px;
-
-    background:#00d4ff;
-
-    border-radius:30px;
-
-    box-shadow:
-        0 0 12px rgba(0,212,255,.9);
-
-}
-
-.timeline-item.right::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:58px;
-
-    left:20px;
-
-    width:46px;
-    height:3px;
-
-    background:#00d4ff;
-
-    border-radius:30px;
-
-    box-shadow:
-        0 0 12px rgba(0,212,255,.9);
-
-}
-
-/*======================================================
-TIMELINE DOT
-======================================================*/
-
-.timeline-dot{
-
-    position:absolute;
-
-    top:47px;
-
-    width:24px;
-    height:24px;
-
-    border-radius:50%;
-
-    background:#fff;
-
-    border:5px solid #00d4ff;
-
-    z-index:10;
-
-    box-shadow:
-
-        0 0 12px #00d4ff,
-        0 0 28px rgba(0,212,255,.6),
-        0 0 45px rgba(37,99,235,.35);
-
-    animation:dotPulse 2.6s infinite;
-
-}
-
-.timeline-dot::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:6px;
-    height:6px;
-
-    background:#fff;
-
-    border-radius:50%;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-}
-
-.timeline-item.left .timeline-dot{
-
-    right:-12px;
-
-}
-
-.timeline-item.right .timeline-dot{
-
-    left:-12px;
-
-}
-
-/*======================================================
-DOT ANIMATION
-======================================================*/
-
-@keyframes dotPulse{
-
-    0%{
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.18);
-
-        box-shadow:
-
-            0 0 18px #00d4ff,
-            0 0 40px rgba(0,212,255,.85);
-
-    }
-
-    100%{
-
-        transform:scale(1);
-
-    }
-
-}
-
-    /*======================================================
-    EXPERIENCE CARD
-======================================================*/
-
-.timeline-content{
-
-    position:relative;
-
-    width:100%;
-    max-width:480px;
 
     overflow:hidden;
 
-    padding:36px;
-
-    border-radius:28px;
-
     background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.10),
-            rgba(255,255,255,.05)
-        );
+    rgba(255,255,255,.75);
 
-    border:1px solid rgba(255,255,255,.10);
+    backdrop-filter:blur(18px);
 
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
+    border-radius:30px;
+
+    padding:35px;
+
+    border:
+    1px solid rgba(0,132,255,.10);
 
     box-shadow:
-        0 20px 45px rgba(0,0,0,.28);
-
-    transition:
-        transform .45s ease,
-        box-shadow .45s ease,
-        border-color .45s ease;
-
-}
-
-/*======================================================
-ANIMATED BORDER
-======================================================*/
-
-.timeline-content::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    padding:1px;
-
-    border-radius:28px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #00d4ff,
-            #2563eb,
-            #7c3aed,
-            #00d4ff
-        );
-
-    background-size:300%;
-
-    animation:borderFlow 6s linear infinite;
-
-    opacity:0;
-
-    transition:.35s;
-
-    pointer-events:none;
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite:xor;
-
-    mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    mask-composite:exclude;
-
-}
-
-@keyframes borderFlow{
-
-    from{
-
-        background-position:0%;
-
-    }
-
-    to{
-
-        background-position:300%;
-
-    }
-
-}
-
-/*======================================================
-FLOATING GLOW
-======================================================*/
-
-.timeline-content::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:260px;
-    height:260px;
-
-    right:-120px;
-    top:-120px;
-
-    background:
-        radial-gradient(
-
-            rgba(0,212,255,.28),
-
-            transparent 70%
-
-        );
-
-    filter:blur(45px);
-
-    opacity:.28;
+    0 20px 50px rgba(0,0,0,.08);
 
     transition:.45s;
 
 }
 
-/*======================================================
-HOVER
-======================================================*/
-
-.timeline-content:hover{
+.education-card:hover{
 
     transform:
-
-        translateY(-12px);
-
-    border-color:
-
-        rgba(111,211,255,.35);
+    translateY(-12px);
 
     box-shadow:
-
-        0 25px 65px rgba(0,212,255,.18),
-
-        0 0 40px rgba(37,99,235,.22);
+    0 35px 70px rgba(0,132,255,.20);
 
 }
 
-.timeline-content:hover::before{
+.education-top{
 
-    opacity:1;
+    display:flex;
 
-}
+    justify-content:space-between;
 
-.timeline-content:hover::after{
+    align-items:center;
 
-    opacity:.85;
-
-    transform:scale(1.2);
+    margin-bottom:30px;
 
 }
 
-/*======================================================
-SHAKE EFFECT
-======================================================*/
+.university-logo{
 
-.timeline-content:hover{
+    width:82px;
 
-    animation:cardShake .45s ease;
+    height:82px;
 
-}
+    border-radius:50%;
 
-@keyframes cardShake{
+    background:white;
 
-    0%{
+    display:flex;
 
-        transform:translateY(-10px) rotate(0deg);
+    justify-content:center;
 
-    }
+    align-items:center;
 
-    25%{
-
-        transform:translateY(-10px) rotate(-1deg);
-
-    }
-
-    50%{
-
-        transform:translateY(-10px) rotate(1deg);
-
-    }
-
-    75%{
-
-        transform:translateY(-10px) rotate(-.6deg);
-
-    }
-
-    100%{
-
-        transform:translateY(-12px) rotate(0deg);
-
-    }
+    box-shadow:
+    0 15px 40px rgba(0,132,255,.18);
 
 }
 
-/*======================================================
-SHINE EFFECT
-======================================================*/
+.university-logo img{
 
-.shine{
+    width:58px;
+
+    height:58px;
+
+    object-fit:contain;
+
+}
+
+.education-status{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    background:#edf6ff;
+
+    color:#0076ff;
+
+    font-weight:700;
+
+    font-size:14px;
+
+}
+
+.education-type{
+
+    display:inline-block;
+
+    color:#0084ff;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+    letter-spacing:.5px;
+
+}
+
+.education-content h3{
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+    color:#111;
+
+}
+
+.education-content h4{
+
+    color:#6f7c89;
+
+    margin-bottom:18px;
+
+    font-size:18px;
+
+}
+
+.education-content p{
+
+    line-height:1.8;
+
+    color:#5b6470;
+
+}
+
+.education-footer{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.education-footer span{
+
+    display:flex;
+
+    gap:10px;
+
+    align-items:center;
+
+}
+
+.education-badge{
+
+    background:#0084ff;
+
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    font-weight:700;
+
+}
+
+.card-glow{
 
     position:absolute;
 
-    inset:0;
+    width:180px;
 
-    overflow:hidden;
+    height:180px;
 
-    border-radius:28px;
+    right:-70px;
 
-    pointer-events:none;
+    bottom:-70px;
 
-}
-
-.shine::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-120%;
-
-    left:-90%;
-
-    width:70%;
-
-    height:280%;
-
-    transform:rotate(25deg);
+    border-radius:50%;
 
     background:
 
-        linear-gradient(
+    radial-gradient(
 
-            transparent,
+    circle,
 
-            rgba(255,255,255,.22),
+    rgba(0,132,255,.20),
 
-            transparent
+    transparent 70%
 
-        );
-
-    transition:1s;
+    );
 
 }
 
-.timeline-content:hover .shine::before{
+/*====================================
+ EXPERIENCE
+====================================*/
 
-    left:160%;
+.experience{
+
+    padding:120px 0;
+    background:#f8fbff;
+    position:relative;
 
 }
 
-/*======================================================
-DATE
-======================================================*/
+.timeline{
+
+    position:relative;
+    max-width:950px;
+    margin:auto;
+
+}
+
+.timeline::before{
+
+    content:"";
+    position:absolute;
+    left:22px;
+    top:0;
+    width:4px;
+    height:100%;
+
+    background:linear-gradient(
+        #0084ff,
+        #72d6ff
+    );
+
+    border-radius:10px;
+
+}
+
+.timeline-item{
+
+    position:relative;
+    padding-left:80px;
+    margin-bottom:55px;
+
+}
+
+.timeline-dot{
+
+    position:absolute;
+    left:10px;
+    top:30px;
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    background:white;
+
+    border:5px solid #0084ff;
+
+    box-shadow:
+    0 0 0 8px rgba(0,132,255,.10),
+    0 0 30px rgba(0,132,255,.35);
+
+}
+
+.timeline-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    border:1px solid rgba(0,132,255,.12);
+
+    transition:.4s;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.08);
+
+}
+
+.timeline-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 30px 60px rgba(0,132,255,.20);
+
+}
 
 .timeline-date{
 
     display:inline-flex;
 
+    gap:10px;
+
     align-items:center;
 
-    gap:8px;
-
-    padding:8px 18px;
-
-    margin-bottom:20px;
-
-    border-radius:50px;
-
-    background:rgba(0,212,255,.10);
-
-    border:1px solid rgba(0,212,255,.20);
-
-    color:#7DDCFF;
-
-    font-size:13px;
-
-    font-weight:600;
-
-}
-
-/*======================================================
-TITLE
-======================================================*/
-
-.timeline-content h3{
-
-    font-size:28px;
-
-    color:#ffffff;
-
-    font-weight:700;
-
-    margin-bottom:10px;
-
-    line-height:1.3;
-
-}
-
-/*======================================================
-COMPANY
-======================================================*/
-
-.timeline-content h4{
-
-    font-size:16px;
-
-    color:#66D3FF;
-
-    font-weight:600;
-
-    margin-bottom:22px;
-
-}
-
-/*======================================================
-DESCRIPTION
-======================================================*/
-
-.timeline-content p{
-
-    color:#C7D8EB;
-
-    line-height:1.8;
+    color:#0076ff;
 
     font-size:15px;
 
+    font-weight:600;
+
+    margin-bottom:18px;
+
 }
 
-    /*======================================================
-    EXPERIENCE SKILLS
-======================================================*/
+.timeline-card h3{
 
-.experience-skills{
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.timeline-card h4{
+
+    color:#7a8794;
+
+    margin-bottom:20px;
+
+}
+
+.timeline-card p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.skill-list{
 
     display:flex;
 
@@ -3803,767 +2984,82 @@ DESCRIPTION
 
     gap:12px;
 
-    margin:22px 0 24px;
-
 }
 
-/*======================================================
-SKILL CHIP
-======================================================*/
+.skill-list span{
 
-.skill-chip{
+    padding:10px 18px;
 
-    position:relative;
+    border-radius:30px;
 
-    display:inline-flex;
+    background:#edf6ff;
 
-    align-items:center;
-
-    padding:10px 18px 10px 34px;
-
-    border-radius:50px;
-
-    overflow:hidden;
-
-    cursor:pointer;
-
-    font-size:13px;
-
-    font-weight:500;
-
-    color:#d8e6f5;
-
-    letter-spacing:.3px;
-
-    background:
-
-        rgba(255,255,255,.05);
-
-    border:1px solid
-
-        rgba(255,255,255,.08);
-
-    transition:
-
-        .35s;
-
-}
-
-/*======================================================
-DOT
-======================================================*/
-
-.skill-chip::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:15px;
-
-    width:8px;
-
-    height:8px;
-
-    border-radius:50%;
-
-    background:#6b7280;
-
-    transition:.35s;
-
-}
-
-/*======================================================
-GLOW
-======================================================*/
-
-.skill-chip::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:50px;
-
-    background:
-
-        linear-gradient(
-
-            135deg,
-
-            rgba(0,212,255,.15),
-
-            rgba(37,99,235,.08),
-
-            rgba(124,58,237,.12)
-
-        );
-
-    opacity:0;
-
-    transition:.35s;
-
-}
-
-/*======================================================
-HOVER
-======================================================*/
-
-.skill-chip:hover{
-
-    transform:
-
-        translateY(-3px);
-
-    color:#ffffff;
-
-    border-color:
-
-        rgba(0,212,255,.45);
-
-    box-shadow:
-
-        0 0 18px rgba(0,212,255,.18),
-
-        0 8px 25px rgba(0,0,0,.18);
-
-}
-
-.skill-chip:hover::before{
-
-    background:#00d4ff;
-
-    box-shadow:
-
-        0 0 8px #00d4ff,
-
-        0 0 20px rgba(0,212,255,.8);
-
-}
-
-.skill-chip:hover::after{
-
-    opacity:1;
-
-}
-
-/*======================================================
-ACTIVE
-======================================================*/
-
-.skill-chip:active{
-
-    transform:
-
-        scale(.96);
-
-}
-
-/*======================================================
-ANIMATION
-======================================================*/
-
-.skill-chip{
-
-    opacity:0;
-
-    animation:chipFade .55s forwards;
-
-}
-
-.skill-chip:nth-child(1){
-
-animation-delay:.05s;
-
-}
-
-.skill-chip:nth-child(2){
-
-animation-delay:.10s;
-
-}
-
-.skill-chip:nth-child(3){
-
-animation-delay:.15s;
-
-}
-
-.skill-chip:nth-child(4){
-
-animation-delay:.20s;
-
-}
-
-.skill-chip:nth-child(5){
-
-animation-delay:.25s;
-
-}
-
-.skill-chip:nth-child(6){
-
-animation-delay:.30s;
-
-}
-
-@keyframes chipFade{
-
-from{
-
-opacity:0;
-
-transform:
-
-translateY(15px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:
-
-translateY(0);
-
-}
-
-}
-
-/*======================================================
-DATE
-======================================================*/
-
-.timeline-date{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    padding:8px 18px;
-
-    border-radius:40px;
-
-    font-size:13px;
+    color:#0076ff;
 
     font-weight:600;
 
-    color:#7fdcff;
-
-    background:
-
-        rgba(0,212,255,.08);
-
-    border:1px solid
-
-        rgba(0,212,255,.15);
+    transition:.3s;
 
 }
 
-/*======================================================
-TITLE
-======================================================*/
+.skill-list span:hover{
 
-.timeline-content h3{
+    background:#0084ff;
 
-    margin-bottom:10px;
+    color:white;
 
-    font-size:28px;
+}
+@media(max-width:768px){
 
-    font-weight:700;
+.timeline::before{
 
-    color:#ffffff;
+left:15px;
 
 }
 
-/*======================================================
-COMPANY
-======================================================*/
+.timeline-dot{
 
-.timeline-content h4{
-
-    margin-bottom:10px;
-
-    font-size:16px;
-
-    font-weight:600;
-
-    color:#6fd3ff;
+left:3px;
 
 }
-
-/*======================================================
-DESCRIPTION
-======================================================*/
-
-.timeline-content p{
-
-    margin-top:18px;
-
-    color:#bfd3e8;
-
-    line-height:1.8;
-
-    font-size:15px;
-
-}
-
-    /*======================================================
-    RESPONSIVE
-======================================================*/
-
-/*======================================
-Laptop
-======================================*/
-
-@media (max-width:1200px){
-
-    .timeline{
-
-        max-width:1000px;
-
-    }
-
-    .timeline-content{
-
-        max-width:420px;
-
-    }
-
-}
-
-/*======================================
-Tablet
-======================================*/
-
-@media (max-width:991px){
-
-    .experience{
-
-        padding:100px 0;
-
-    }
-
-    .experience .section-title{
-
-        margin-bottom:70px;
-
-    }
-
-    .experience .section-title h2{
-
-        font-size:42px;
-
-    }
-
-    /* Timeline */
-
-    .timeline{
-
-        padding-top:20px;
-
-    }
-
-    .timeline::before{
-
-        left:32px;
-
-        transform:none;
-
-    }
-
-    /* Semua menjadi satu kolom */
-
-    .timeline-item{
-
-        width:100%;
-
-        margin-left:0;
-
-        padding-left:90px;
-
-        padding-right:0;
-
-        justify-content:flex-start;
-
-        margin-bottom:60px;
-
-    }
-
-    .timeline-item.left,
-    .timeline-item.right{
-
-        padding-left:90px;
-
-        padding-right:0;
-
-    }
-
-    /* Dot */
-
-    .timeline-dot{
-
-        left:20px !important;
-
-        right:auto !important;
-
-    }
-
-    /* Connector */
-
-    .timeline-item::after{
-
-        left:32px !important;
-
-        right:auto !important;
-
-        width:34px;
-
-    }
-
-    /* Card */
-
-    .timeline-content{
-
-        max-width:100%;
-
-    }
-
-    /* Skills */
-
-    .experience-skills{
-
-        gap:10px;
-
-    }
-
-}
-
-/*======================================
-Mobile
-======================================*/
-
-@media (max-width:768px){
-
-    .experience{
-
-        padding:80px 0;
-
-    }
-
-    .experience .section-title{
-
-        margin-bottom:55px;
-
-    }
-
-    .experience .section-title h2{
-
-        font-size:34px;
-
-    }
-
-    .experience .section-title p{
-
-        font-size:15px;
-
-    }
-
-    .timeline{
-
-        padding:10px 0;
-
-    }
-
-    .timeline::before{
-
-        left:22px;
-
-    }
-
-    .timeline-item{
-
-        padding-left:70px;
-
-        margin-bottom:45px;
-
-    }
-
-    .timeline-dot{
-
-        width:20px;
-
-        height:20px;
-
-        border-width:4px;
-
-        left:12px !important;
-
-    }
-
-    .timeline-item::after{
-
-        left:22px !important;
-
-        width:24px;
-
-    }
-
-    .timeline-content{
-
-        padding:26px;
-
-        border-radius:22px;
-
-    }
-
-    .timeline-date{
-
-        font-size:12px;
-
-        padding:7px 15px;
-
-    }
-
-    .timeline-content h3{
-
-        font-size:22px;
-
-    }
-
-    .timeline-content h4{
-
-        font-size:15px;
-
-    }
-
-    .timeline-content p{
-
-        font-size:14px;
-
-        line-height:1.7;
-
-    }
-
-    .experience-skills{
-
-        gap:8px;
-
-    }
-
-    .skill-chip{
-
-        font-size:11px;
-
-        padding:8px 16px 8px 30px;
-
-    }
-
-    .skill-chip::before{
-
-        width:7px;
-
-        height:7px;
-
-        left:13px;
-
-    }
-
-}
-
-    
-
-/*======================================
-Small Mobile
-======================================*/
-
-@media (max-width:480px){
-
-    .experience{
-
-        padding:70px 0;
-
-    }
-
-    .timeline::before{
-
-        left:18px;
-
-    }
-
-    .timeline-item{
-
-        padding-left:60px;
-
-        margin-bottom:35px;
-
-    }
-
-    .timeline-dot{
-
-        width:18px;
-
-        height:18px;
-
-        border-width:4px;
-
-        left:9px !important;
-
-    }
-
-    .timeline-item::after{
-
-        left:18px !important;
-
-        width:18px;
-
-    }
-
-    .timeline-content{
-
-        padding:22px;
-
-        border-radius:20px;
-
-    }
-
-    .timeline-content h3{
-
-        font-size:20px;
-
-    }
-
-    .timeline-content h4{
-
-        font-size:14px;
-
-    }
-
-    .timeline-content p{
-
-        font-size:13px;
-
-    }
-
-    .timeline-date{
-
-        font-size:11px;
-
-        padding:6px 13px;
-
-    }
-
-    .skill-chip{
-
-        font-size:10px;
-
-        padding:7px 14px 7px 28px;
-
-    }
-
-    .skill-chip::before{
-
-        left:12px;
-
-        width:6px;
-
-        height:6px;
-
-    }
-
-}
-
-    /*====================================
-SCROLL REVEAL
-====================================*/
 
 .timeline-item{
 
-opacity:0;
-
-transition:
-
-opacity .8s ease,
-
-transform .8s ease;
+padding-left:55px;
 
 }
 
-.timeline-item.left{
+.timeline-card{
 
-transform:translateX(-80px);
-
-}
-
-.timeline-item.right{
-
-transform:translateX(80px);
+padding:25px;
 
 }
 
-.timeline-item.show{
+.timeline-card h3{
 
-opacity:1;
-
-transform:translateX(0);
+font-size:22px;
 
 }
 
-
-
-/*====================================
-MOUSE GLOW
-====================================*/
-
-.timeline-content{
-
---mouse-x:50%;
-
---mouse-y:50%;
-
 }
 
-.timeline-content::after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-pointer-events:none;
-
-background:
-
-radial-gradient(
-
-250px circle at
-
-var(--mouse-x)
-
-var(--mouse-y),
-
-rgba(0,212,255,.12),
-
-transparent 60%
-
-);
+.reveal{
 
 opacity:0;
 
-transition:.25s;
+transform:translateY(60px);
+
+transition:1s;
 
 }
 
-.timeline-content:hover::after{
+.reveal.active{
 
 opacity:1;
 
+transform:translateY(0);
+
 }
-    
 /*=========================================
 FEATURED PROJECTS
 =========================================*/
