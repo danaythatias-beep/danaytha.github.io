@@ -671,18 +671,6 @@ HERO SECTION
     align-items: center;
 }
 
-/* Lingkaran luar */
-.hero-image-card{
-    width: 1000px;
-    height: 1000px;
-    border-radius: 30%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border: 3px solid rgba(255,255,255,.15);
-    box-shadow: 0 20px 60px rgba(0,0,0,.25);
 }
 
 /* Foto */
