@@ -894,7 +894,7 @@ INTRO
 
 .hero-intro h4{
 
-    font-size:18px;
+    font-size:24px;
 
     font-weight:600;
 
@@ -1460,7 +1460,7 @@ BUTTONS
 
 .btn{
 
-    padding:16px 34px;
+    padding:24px 34px;
 
     border-radius:50px;
 
@@ -1472,7 +1472,7 @@ BUTTONS
 
 .btn-primary{
 
-    background:linear-gradient(135deg,#2f7cf6,#1ed4ff);
+    background:linear-gradient(135deg,#255095,#1ed4ff);
 
     color:#fff;
 
@@ -1699,9 +1699,9 @@ IMAGE
 
 .about-image img{
 
-    width:100%;
+    width:170%;
 
-    max-width:390px;
+    max-width:490px;
 
     border-radius:35px;
 
@@ -1709,7 +1709,7 @@ IMAGE
 
     box-shadow:
 
-    0 30px 70px rgba(0,0,0,.18);
+    0 30px 70px rgba(0,0,0,.25);
 
     transition:.45s;
 
@@ -1889,7 +1889,7 @@ CARD
     border:1px solid rgba(255,255,255,.45);
 
     box-shadow:
-        0 20px 45px rgba(15,23,42,.08);
+        0 20px 45px rgba(15,23,42,.40);
 
 }
 
