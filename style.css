@@ -1563,60 +1563,28 @@ IMAGE
     position:relative;
 
 }
-
 .hero-image-card{
 
-    position:relative;
-
-    width:430px;
-
-    height:430px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(18px);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    box-shadow:
-
-    0 0 70px rgba(0,212,255,.22),
-
-    0 20px 60px rgba(0,0,0,.35);
-
-}
-
-.hero-image-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:105%;
-
-    height:105%;
-
-    border-radius:50%;
-
-    border:2px solid rgba(255,255,255,.12);
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .hero-image img{
 
-    width:92%;
+    width:560px;      /* bisa 600px kalau ingin lebih besar */
+    max-width:100%;
+    height:auto;
 
-    height:92%;
+    object-fit:contain;
 
-    object-fit:cover;
-
-    border-radius:50%;
+    border-radius:0;      /* supaya tidak bulat */
 
     animation:floating 5s ease-in-out infinite;
 
