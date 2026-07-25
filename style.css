@@ -5757,7 +5757,6 @@ img{
     width:600px;
     height:600px;
     border-radius:50%;
-    background:rgba(0,212,255,.08);
     right:-250px;
     top:-250px;
     filter:blur(120px);
