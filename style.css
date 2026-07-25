@@ -2611,7 +2611,145 @@ RESPONSIVE
 /*======================================================
     EXPERIENCE SECTION
 ======================================================*/
+/* =========================
+ EXPERIENCE TIMELINE
+========================= */
 
+
+.timeline{
+
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+
+}
+
+
+/* garis tengah */
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    width:3px;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        180deg,
+        #6fd3ff,
+        #0077ff
+    );
+
+    transform:translateX(-50%);
+
+}
+
+
+
+/* item */
+
+.timeline-item{
+
+    position:relative;
+
+    width:50%;
+
+    padding:30px;
+
+}
+
+
+
+/* posisi kiri kanan */
+
+.timeline-item:nth-child(odd){
+
+    left:0;
+
+    text-align:right;
+
+}
+
+
+.timeline-item:nth-child(even){
+
+    left:50%;
+
+}
+
+
+
+/* DOT */
+
+.timeline-dot{
+
+    position:absolute;
+
+    top:40px;
+
+    left:100%;
+
+    width:18px;
+
+    height:18px;
+
+    background:#6fd3ff;
+
+    border-radius:50%;
+
+    transform:translateX(-50%);
+
+
+    box-shadow:
+    0 0 15px #6fd3ff,
+    0 0 35px #6fd3ff;
+
+}
+
+
+
+.timeline-item:nth-child(even)
+.timeline-dot{
+
+    left:0;
+
+}
+
+
+
+/* CARD */
+
+.timeline-content{
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+    backdrop-filter:blur(15px);
+
+
+    border:1px solid rgba(255,255,255,.2);
+
+
+    padding:25px;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.15);
+
+}
+    
 .experience{
     position:relative;
     overflow:hidden;
@@ -2760,7 +2898,7 @@ SECTION TITLE
 
     font-weight:800;
 
-    color:#fff;
+    color:#111827;
 
     margin-bottom:15px;
 
