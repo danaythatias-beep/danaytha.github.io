@@ -1623,13 +1623,13 @@ FLOATING
 
     position:absolute;
 
-    width:650px;
+    width:850px;
 
     height:650px;
 
     border-radius:50%;
 
-    background:rgba(111,211,255,.12);
+    background:rgba(111,211,255,.20);
 
     top:-250px;
 
@@ -1645,13 +1645,13 @@ FLOATING
 
     position:absolute;
 
-    width:450px;
+    width:1996px;
 
     height:450px;
 
     border-radius:50%;
 
-    background:rgba(37,99,235,.08);
+    background:rgba(37,99,235,.30);
 
     left:-180px;
 
@@ -2124,7 +2124,7 @@ CARD
     transition:.45s ease;
 
     box-shadow:
-        0 15px 35px rgba(15,23,42,.08);
+        0 15px 35px rgba(15,23,42,.0.8);
 
 }
 
