@@ -121,7 +121,7 @@ button{
 
 section{
 
-    padding:110px 0;
+    padding:100px 0;
 
 }
 
@@ -314,11 +314,11 @@ HEADER
 
     rgba(35,42,50,.90));
 
-    backdrop-filter:blur(20px);
+    backdrop-filter:blur(50px);
 
     border-bottom:
 
-    1px solid rgba(255,255,255,.08);
+    1px solid rgba(255,255,255,.20);
 
 }
 
