@@ -4566,11 +4566,13 @@ RESPONSIVE
 
 }
 
-.education .container{
-
-    position:relative;
-
-    z-index:2;
+.education-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
 
 }
 
