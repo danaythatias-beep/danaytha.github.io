@@ -2600,280 +2600,7 @@ RESPONSIVE
 
     font-size:20px;
 
-}
-
-/*==================================================
-EDUCATION
-==================================================*/
-
-#education{
-    position:relative;
-    padding:120px 0;
-    overflow:hidden;
-    background:#f8fbff;
-}
-
-#education::before{
-
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(rgba(0,113,227,.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,113,227,.03) 1px,transparent 1px);
-
-    background-size:50px 50px;
-    pointer-events:none;
-}
-
-/*=========================
-GRID
-=========================*/
-
-.edu-grid{
-
-    max-width:950px;
-    margin:auto;
-
-    display:grid;
-    gap:28px;
-}
-
-/*=========================
-CARD
-=========================*/
-
-.edu-card{
-
-    position:relative;
-
-    background:#fff;
-
-    border-radius:24px;
-
-    padding:32px;
-
-    border:1px solid rgba(0,113,227,.08);
-
-    box-shadow:
-    0 10px 35px rgba(0,0,0,.06);
-
-    transition:.35s;
-}
-
-.edu-card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:#0071e3;
-
-    box-shadow:
-    0 25px 50px rgba(0,113,227,.15);
-
-}
-
-/* garis atas */
-
-.edu-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    top:0;
-
-    width:100%;
-    height:5px;
-
-    border-radius:24px 24px 0 0;
-
-    background:linear-gradient(
-    90deg,
-    #0071e3,
-    #5ab2ff
-    );
-
-}
-
-/*=========================
-HEADER
-=========================*/
-
-.edu-card-head{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:24px;
-
-    margin-bottom:28px;
-}
-
-.edu-logo{
-
-    width:78px;
-
-    height:78px;
-
-    object-fit:contain;
-
-    border-radius:18px;
-
-    background:#fff;
-
-    padding:12px;
-
-    border:1px solid rgba(0,113,227,.12);
-
-    box-shadow:
-    0 8px 20px rgba(0,113,227,.08);
-}
-
-.edu-title{
-
-    flex:1;
-}
-
-.edu-title h3{
-
-    margin:0;
-
-    font-size:28px;
-
-    color:#1d1d1f;
-
-    font-weight:700;
-}
-
-.edu-title p{
-
-    margin-top:8px;
-
-    color:#6e6e73;
-
-    font-size:17px;
-}
-
-/*=========================
-BODY
-=========================*/
-
-.edu-card-body{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    flex-wrap:wrap;
-
-    gap:15px;
-
-    margin-bottom:30px;
-}
-
-.edu-period{
-
-    color:#666;
-
-    font-size:15px;
-
-    font-weight:500;
-}
-
-.edu-gpa{
-
-    color:#0071e3;
-
-    font-weight:700;
-
-    font-size:15px;
-}
-
-/*=========================
-BADGES
-=========================*/
-
-.edu-badges{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:12px;
-}
-
-.edu-badge{
-
-    padding:10px 18px;
-
-    border-radius:999px;
-
-    background:#eef6ff;
-
-    color:#0071e3;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    border:1px solid rgba(0,113,227,.12);
-
-    transition:.3s;
-}
-
-.edu-badge:hover{
-
-    background:#0071e3;
-
-    color:#fff;
-
-    transform:translateY(-3px);
-}
-
-/*=========================
-RESPONSIVE
-=========================*/
-
-@media(max-width:768px){
-
-.edu-card{
-
-padding:24px;
-
-}
-
-.edu-card-head{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-}
-
-.edu-logo{
-
-width:70px;
-height:70px;
-
-}
-
-.edu-title h3{
-
-font-size:22px;
-
-}
-
-.edu-card-body{
-
-flex-direction:column;
-
-align-items:flex-start;
-
+    }
 }
 
     /* =====================================================
@@ -5596,3 +5323,278 @@ img{
 .patent-card p{
     color:rgba(255,255,255,.82);
 }
+
+/*==================================================
+EDUCATION
+==================================================*/
+
+#education{
+    position:relative;
+    padding:120px 0;
+    overflow:hidden;
+    background:#f8fbff;
+}
+
+#education::before{
+
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(0,113,227,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,113,227,.03) 1px,transparent 1px);
+
+    background-size:50px 50px;
+    pointer-events:none;
+}
+
+/*=========================
+GRID
+=========================*/
+
+.edu-grid{
+
+    max-width:950px;
+    margin:auto;
+
+    display:grid;
+    gap:28px;
+}
+
+/*=========================
+CARD
+=========================*/
+
+.edu-card{
+
+    position:relative;
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:32px;
+
+    border:1px solid rgba(0,113,227,.08);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.06);
+
+    transition:.35s;
+}
+
+.edu-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#0071e3;
+
+    box-shadow:
+    0 25px 50px rgba(0,113,227,.15);
+
+}
+
+/* garis atas */
+
+.edu-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:5px;
+
+    border-radius:24px 24px 0 0;
+
+    background:linear-gradient(
+    90deg,
+    #0071e3,
+    #5ab2ff
+    );
+
+}
+
+/*=========================
+HEADER
+=========================*/
+
+.edu-card-head{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+    margin-bottom:28px;
+}
+
+.edu-logo{
+
+    width:78px;
+
+    height:78px;
+
+    object-fit:contain;
+
+    border-radius:18px;
+
+    background:#fff;
+
+    padding:12px;
+
+    border:1px solid rgba(0,113,227,.12);
+
+    box-shadow:
+    0 8px 20px rgba(0,113,227,.08);
+}
+
+.edu-title{
+
+    flex:1;
+}
+
+.edu-title h3{
+
+    margin:0;
+
+    font-size:28px;
+
+    color:#1d1d1f;
+
+    font-weight:700;
+}
+
+.edu-title p{
+
+    margin-top:8px;
+
+    color:#6e6e73;
+
+    font-size:17px;
+}
+
+/*=========================
+BODY
+=========================*/
+
+.edu-card-body{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:30px;
+}
+
+.edu-period{
+
+    color:#666;
+
+    font-size:15px;
+
+    font-weight:500;
+}
+
+.edu-gpa{
+
+    color:#0071e3;
+
+    font-weight:700;
+
+    font-size:15px;
+}
+
+/*=========================
+BADGES
+=========================*/
+
+.edu-badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.edu-badge{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:#eef6ff;
+
+    color:#0071e3;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    border:1px solid rgba(0,113,227,.12);
+
+    transition:.3s;
+}
+
+.edu-badge:hover{
+
+    background:#0071e3;
+
+    color:#fff;
+
+    transform:translateY(-3px);
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media(max-width:768px){
+
+.edu-card{
+
+padding:24px;
+
+}
+
+.edu-card-head{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.edu-logo{
+
+width:70px;
+height:70px;
+
+}
+
+.edu-title h3{
+
+font-size:22px;
+
+}
+
+.edu-card-body{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
