@@ -2881,96 +2881,108 @@ align-items:flex-start;
 
 }
     
-/*====================================
- EXPERIENCE - ZOOM SAFE
-====================================*/
+/*====================================================
+  EXPERIENCE - MODERN TIMELINE (NO HTML CHANGE)
+====================================================*/
 
 .experience{
-    padding:clamp(70px,8vw,120px) 0;
+    padding:100px 0;
     background:#f8fbff;
+    overflow:hidden;
 }
 
 .timeline{
     position:relative;
-    width:min(100%,950px);
-    margin:auto;
+    width:100%;
+    max-width:1000px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:45px;
 }
 
-/* Garis timeline */
+/* Vertical Line */
+
 .timeline::before{
     content:"";
     position:absolute;
-    inset:0 auto 0 1.35rem;
+    top:0;
+    bottom:0;
+    left:22px;
     width:4px;
-    background:linear-gradient(#0084ff,#72d6ff);
-    border-radius:999px;
+    border-radius:50px;
+    background:linear-gradient(
+        180deg,
+        #0084ff 0%,
+        #56c8ff 100%
+    );
 }
 
-/* Layout */
+/*================================================*/
+
 .timeline-item{
 
     display:grid;
 
-    grid-template-columns:2.75rem minmax(0,1fr);
+    grid-template-columns:44px 1fr;
 
-    column-gap:clamp(18px,2vw,32px);
+    gap:28px;
 
-    align-items:start;
-
-    margin-bottom:clamp(36px,5vw,56px);
-
-    padding-left:0;
+    align-items:flex-start;
 
     position:relative;
 
 }
 
-/* Marker */
+/*================================================*/
+
 .timeline-dot{
 
-    width:1.6rem;
-    height:1.6rem;
+    width:28px;
+    height:28px;
 
-    justify-self:center;
-
-    margin-top:1.7rem;
-
-    background:#fff;
-
-    border:.32rem solid #0084ff;
+    margin-top:28px;
 
     border-radius:50%;
 
-    position:static;
+    background:#fff;
 
-    z-index:2;
+    border:5px solid #0084ff;
+
+    justify-self:center;
+
+    z-index:5;
 
     box-shadow:
-        0 0 0 .45rem rgba(0,132,255,.10),
-        0 0 1.8rem rgba(0,132,255,.25);
+        0 0 0 8px rgba(0,132,255,.12),
+        0 8px 25px rgba(0,132,255,.25);
 
 }
 
-/* Card */
-.timeline-card{
+/*================================================*/
 
-    min-width:0;
+.timeline-card{
 
     width:100%;
 
-    padding:clamp(22px,3vw,36px);
-
-    border-radius:1.75rem;
+    min-width:0;
 
     background:rgba(255,255,255,.82);
 
     backdrop-filter:blur(18px);
 
-    border:1px solid rgba(0,132,255,.12);
+    border-radius:30px;
 
-    box-shadow:0 20px 45px rgba(0,0,0,.08);
+    padding:35px;
 
-    transition:.35s;
+    border:1px solid rgba(0,132,255,.10);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.08);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
 
 }
 
@@ -2978,96 +2990,289 @@ align-items:flex-start;
 
     transform:translateY(-8px);
 
-    box-shadow:0 30px 60px rgba(0,132,255,.18);
+    box-shadow:
+        0 28px 55px rgba(0,132,255,.18);
 
 }
 
-/* Typography */
+/*================================================*/
 
 .timeline-date{
-    font-size:clamp(.85rem,.9vw,1rem);
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:18px;
+
+    color:#0084ff;
+
+    font-weight:600;
+
+    font-size:15px;
+
 }
 
 .timeline-card h3{
-    font-size:clamp(1.5rem,2vw,2rem);
+
+    font-size:clamp(26px,2vw,34px);
+
+    color:#111827;
+
+    margin-bottom:8px;
+
 }
 
 .timeline-card h4{
-    font-size:clamp(1rem,1.2vw,1.15rem);
+
+    font-size:18px;
+
+    color:#6b7280;
+
+    margin-bottom:20px;
+
 }
 
 .timeline-card p{
-    font-size:clamp(.95rem,1vw,1.05rem);
+
+    color:#4b5563;
+
     line-height:1.8;
+
+    font-size:16px;
+
+    margin-bottom:24px;
+
 }
 
-/* Skills */
+/*================================================*/
 
 .skill-list{
+
     display:flex;
+
     flex-wrap:wrap;
-    gap:.75rem;
+
+    gap:12px;
+
 }
 
 .skill-list span{
-    padding:.65rem 1rem;
+
+    padding:10px 18px;
+
     border-radius:999px;
+
+    background:#eef7ff;
+
+    color:#0077ff;
+
+    font-weight:600;
+
+    transition:.3s;
+
 }
 
-/* Tablet */
+.skill-list span:hover{
+
+    background:#0084ff;
+
+    color:#fff;
+
+}
+
+/*====================================================
+TABLET
+====================================================*/
+
+@media (max-width:992px){
+
+.timeline{
+
+    max-width:92%;
+
+}
+
+.timeline::before{
+
+    left:20px;
+
+}
+
+.timeline-item{
+
+    grid-template-columns:40px 1fr;
+
+    gap:20px;
+
+}
+
+.timeline-dot{
+
+    width:24px;
+
+    height:24px;
+
+    border-width:4px;
+
+}
+
+.timeline-card{
+
+    padding:28px;
+
+}
+
+}
+
+/*====================================================
+MOBILE
+====================================================*/
 
 @media (max-width:768px){
 
-    .timeline{
-        width:100%;
-    }
+.timeline{
 
-    .timeline::before{
-        left:1rem;
-    }
-
-    .timeline-item{
-
-        grid-template-columns:2rem minmax(0,1fr);
-
-        column-gap:1rem;
-
-    }
-
-    .timeline-dot{
-
-        width:1.2rem;
-        height:1.2rem;
-
-        border-width:.25rem;
-
-    }
+    gap:30px;
 
 }
 
-/* HP */
+.timeline::before{
+
+    left:17px;
+
+}
+
+.timeline-item{
+
+    grid-template-columns:34px 1fr;
+
+    gap:16px;
+
+}
+
+.timeline-dot{
+
+    width:20px;
+
+    height:20px;
+
+    margin-top:22px;
+
+    border-width:4px;
+
+}
+
+.timeline-card{
+
+    padding:22px;
+
+    border-radius:22px;
+
+}
+
+.timeline-card h3{
+
+    font-size:24px;
+
+}
+
+.timeline-card h4{
+
+    font-size:16px;
+
+}
+
+.timeline-card p{
+
+    font-size:15px;
+
+}
+
+}
+
+/*====================================================
+SMALL PHONE
+====================================================*/
 
 @media (max-width:480px){
 
-    .timeline::before{
-        left:.9rem;
-    }
+.timeline{
 
-    .timeline-item{
-
-        grid-template-columns:1.8rem minmax(0,1fr);
-
-        column-gap:.9rem;
-
-    }
-
-    .timeline-card{
-
-        padding:20px;
-
-    }
+    gap:24px;
 
 }
+
+.timeline::before{
+
+    left:15px;
+
+}
+
+.timeline-item{
+
+    grid-template-columns:30px 1fr;
+
+    gap:14px;
+
+}
+
+.timeline-dot{
+
+    width:18px;
+
+    height:18px;
+
+    border-width:3px;
+
+}
+
+.timeline-card{
+
+    padding:18px;
+
+}
+
+.skill-list{
+
+    gap:8px;
+
+}
+
+.skill-list span{
+
+    padding:8px 14px;
+
+    font-size:13px;
+
+}
+
+}
+
+/*====================================================
+ANIMATION
+====================================================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .8s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+    
 /*=========================================
 FEATURED PROJECTS
 =========================================*/
