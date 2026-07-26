@@ -654,8 +654,6 @@ HERO SECTION
     align-items: center;
     }
 
-}
-
 /* Foto */
 .hero-image-card img{
     width: 100%;
@@ -2292,8 +2290,6 @@ RESPONSIVE
 
     }
 
-}
-
 @media(max-width:768px){
 
     .stats-grid{
@@ -3569,7 +3565,7 @@ CARD
 
     box-shadow:
 
-    0 20px 55px rgba(15,23,42,.08);
+    0 20px 55px rgba(15,23,42,.0.8);
 
     transition:.45s;
 
