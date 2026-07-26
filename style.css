@@ -99,7 +99,8 @@ a{
 img{
 
     display:block;
-    width:10%;
+    max-width:100%;
+    height:auto;
 
 }
 
@@ -2118,7 +2119,7 @@ CARD
     transition:.45s ease;
 
     box-shadow:
-        0 15px 35px rgba(15,23,42,.0.8);
+        0 15px 35px rgba(15,23,42,0.8);
 
 }
 
