@@ -6,10 +6,6 @@
     Reset
     Global
     Typography
-    Button
-    Preloader
-    Header
-    Navbar
 =========================================================*/
 
 
@@ -3057,39 +3053,39 @@ align-items:flex-start;
     color:white;
 
 }
-@media(max-width:2500px){
+        @media(max-width:768px){
 
-.timeline::before{
+            .timeline::before{
 
-left:15px;
+            left:15px;
 
-}
+            }
 
-.timeline-dot{
+                .timeline-dot{
 
-left:3px;
+                left:3px;
 
-}
+                }
 
-.timeline-item{
+                .timeline-item{
 
-padding-left:55px;
+                padding-left:55px;
 
-}
+                }
 
-.timeline-card{
+                .timeline-card{
 
-padding:25px;
+                padding:25px;
 
-}
+                }
 
-.timeline-card h3{
+                .timeline-card h3{
 
-font-size:22px;
+                font-size:22px;
 
-}
+                }
 
-}
+                }
 
 .reveal{
 
@@ -3110,7 +3106,7 @@ transform:translateY(0);
 }
 
 
-    @media(max-width:2500px){
+    @media(max-width:768px){
 
     .experience-grid{
 
@@ -3120,7 +3116,7 @@ transform:translateY(0);
 
 }
 
-@media(max-width:2500px){
+    @media(max-width:768px){
 
     .experience-grid{
 
