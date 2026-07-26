@@ -614,11 +614,9 @@ Typography
 .hero-image-card img{
 
     width:150%;
-
+    max-width:700px
     height:auto;
-
     display:block;
-
     object-fit:contain;
 
 }
