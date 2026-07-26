@@ -3057,7 +3057,7 @@ align-items:flex-start;
     color:white;
 
 }
-@media(min-width:768px){
+@media(max-width:2200px){
 
 .timeline::before{
 
