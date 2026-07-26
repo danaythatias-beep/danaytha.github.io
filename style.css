@@ -3057,7 +3057,7 @@ align-items:flex-start;
     color:white;
 
 }
-@media(max-width:1200px){
+@media(max-width:2500px){
 
 .timeline::before{
 
@@ -3110,7 +3110,7 @@ transform:translateY(0);
 }
 
 
-    @media(max-width:992px){
+    @media(max-width:2500px){
 
     .experience-grid{
 
@@ -3120,7 +3120,7 @@ transform:translateY(0);
 
 }
 
-@media(max-width:768px){
+@media(max-width:2500px){
 
     .experience-grid{
 
