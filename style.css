@@ -585,7 +585,7 @@ background:#edf2f7;
 
 background:#2498ff;
 
-border-radius:30px;
+border-radius:0px;
 
 }
 
@@ -614,8 +614,7 @@ Typography
 .hero-image-card img{
 
     width:150%;
-    max-width: 800px
-    height:auto;
+    max-width:800px
 
     display:block;
 
