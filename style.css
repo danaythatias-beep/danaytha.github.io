@@ -519,7 +519,7 @@ PHOTO
 
 .hero-image img{
 
-    width:510px;
+    max-width:690px;
 
     position:relative;
 
