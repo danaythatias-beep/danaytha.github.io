@@ -331,7 +331,7 @@ HERO
 
     position:relative;
 
-    min-height:100vh;
+     min-height:850px;
 
     display:flex;
 
@@ -405,7 +405,7 @@ CONTAINER
 
     align-items:center;
 
-    gap:70px;
+    gap:0px;
 
     min-height:100vh;
 
