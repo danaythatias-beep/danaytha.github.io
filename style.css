@@ -467,31 +467,19 @@ SECTION TITLE
 
 .section-title{
 
-    font-size:58px;
+    max-width:780px;
 
-    font-weight:800;
+    margin:0 auto;
 
-    color:#04152E;
-
-    text-align:center;
-
-    letter-spacing:-2px;
-
-    margin-bottom:25px;
-
-}
-
-.section-subtitle{
+    color:#6B7280;          /* abu-abu */
 
     font-size:18px;
 
-    color:#5F6F85;
+    font-weight:400;        /* normal */
 
-    line-height:1.9;
+    line-height:1.9;        /* jarak antar baris */
 
-    max-width:760px;
-
-    margin:auto;
+    letter-spacing:.2px;
 
     text-align:center;
 
@@ -2985,11 +2973,23 @@ Title
 
 .certifications .section-title{
 
-    max-width:760px;
+    max-width:780px;
 
-    margin:0 auto 70px;
+    margin:0 auto;
+
+    color:#6B7280;          /* abu-abu */
+
+    font-size:18px;
+
+    font-weight:400;        /* normal */
+
+    line-height:1.9;        /* jarak antar baris */
+
+    letter-spacing:.2px;
 
     text-align:center;
+
+}
 
 }
 
@@ -4038,9 +4038,23 @@ Title
 
 .patents .section-title{
 
+    max-width:780px;
+
+    margin:0 auto;
+
+    color:#6B7280;          /* abu-abu */
+
+    font-size:18px;
+
+    font-weight:400;        /* normal */
+
+    line-height:1.9;        /* jarak antar baris */
+
+    letter-spacing:.2px;
+
     text-align:center;
 
-    margin-bottom:70px;
+}
 
 }
 
@@ -4874,13 +4888,21 @@ GOOGLE FONT
 
 .contact .section-title{
 
-    position:relative;
+    max-width:780px;
 
-    z-index:2;
+    margin:0 auto;
+
+    color:#6B7280;          /* abu-abu */
+
+    font-size:18px;
+
+    font-weight:400;        /* normal */
+
+    line-height:1.9;        /* jarak antar baris */
+
+    letter-spacing:.2px;
 
     text-align:center;
-
-    margin-bottom:70px;
 
 }
 
