@@ -520,6 +520,8 @@ PHOTO
 .hero-image img{
 
     max-width:670px;
+    
+    margin-left:-80px;
 
     position:relative;
 
