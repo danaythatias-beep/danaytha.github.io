@@ -331,13 +331,19 @@ HERO
 
     position:relative;
 
-     min-height:850px;
+    min-height:760px;
 
     display:flex;
 
-    align-items:center;
+    align-items:flex-end;
 
     overflow:hidden;
+
+    padding-top:130px;
+
+    padding-bottom:0;
+
+}
 
     background:
     radial-gradient(circle at 72% 28%,
@@ -397,17 +403,13 @@ CONTAINER
 
     display:grid;
 
-    grid-template-columns:
+    grid-template-columns:1fr 520px 1fr;
 
-    1fr
-    520px
-    1fr;
+    align-items:end;
 
-    align-items:center;
+    gap:0;
 
-    gap:0px;
-
-    min-height:100vh;
+    min-height:720px;   /* atau 720px */
 
 }
 
