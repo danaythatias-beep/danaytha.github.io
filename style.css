@@ -278,8 +278,6 @@ HERO CONTAINER
     display:grid;
     grid-template-columns:1fr 520px 1fr;
     align-items:center;
-    min-height: 100vh;
-    transform: translateY(-80px); /* naik 60px */
 }
 
 /*==================================================
@@ -362,6 +360,7 @@ RIGHT
     align-items:flex-start;
     max-width:440px;
     color:#fff;
+    transform: translateY(-70px);
 }
 
 .hero-right h4{
