@@ -277,9 +277,9 @@ HERO CONTAINER
     margin:auto;
     display:grid;
     grid-template-columns:1fr 520px 1fr;
-    align-items:end;
-    gap:0;
-    min-height:760px;
+    align-items:center;
+    min-height: 100vh;
+    transform: translateY(-80px); /* naik 60px */
 }
 
 /*==================================================
