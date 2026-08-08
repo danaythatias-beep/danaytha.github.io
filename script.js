@@ -1,209 +1,531 @@
-/*====================================================
-HEADER SCROLL
-====================================================*/
+/* =========================================================
+   PROJECT CAROUSEL
+   6 PROJECTS
+   3 PROJECTS / PAGE
+========================================================= */
 
-const header = document.getElementById("header");
+document.addEventListener("DOMContentLoaded", function () {
 
-window.addEventListener("scroll", () => {
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
 
-    if (window.scrollY > window.innerHeight - 120) {
+    const track = document.getElementById("projectsTrack");
 
-        header.classList.add("scrolled");
+    const cards = track
+        ? Array.from(track.querySelectorAll(".project-card"))
+        : [];
 
-    } else {
+    const prevButton =
+        document.getElementById("projectsPrev");
 
-        header.classList.remove("scrolled");
+    const nextButton =
+        document.getElementById("projectsNext");
+
+    const pageButtons =
+        Array.from(
+            document.querySelectorAll(".project-page")
+        );
+
+    const showingText =
+        document.getElementById("projectShowing");
+
+
+    /* =====================================================
+       CHECK ELEMENTS
+    ===================================================== */
+
+    if (!track || cards.length === 0) {
+        console.warn("Project carousel tidak ditemukan.");
+        return;
+    }
+
+
+    /* =====================================================
+       SETTINGS
+    ===================================================== */
+
+    const projectsPerPage = 3;
+
+    const totalPages =
+        Math.ceil(cards.length / projectsPerPage);
+
+    let currentPage = 0;
+
+
+    /* =====================================================
+       GET CARD WIDTH + GAP
+    ===================================================== */
+
+    function getSlideDistance() {
+
+        if (!cards[0]) {
+            return 0;
+        }
+
+        const cardWidth =
+            cards[0].getBoundingClientRect().width;
+
+        const trackStyle =
+            window.getComputedStyle(track);
+
+        const gap =
+            parseFloat(trackStyle.columnGap) ||
+            parseFloat(trackStyle.gap) ||
+            0;
+
+        return (cardWidth + gap) * projectsPerPage;
+    }
+
+
+    /* =====================================================
+       UPDATE SHOWING TEXT
+    ===================================================== */
+
+    function updateShowing() {
+
+        if (!showingText) {
+            return;
+        }
+
+        const start =
+            (currentPage * projectsPerPage) + 1;
+
+        const end =
+            Math.min(
+                start + projectsPerPage - 1,
+                cards.length
+            );
+
+        showingText.textContent =
+            `${start}–${end}`;
+    }
+
+
+    /* =====================================================
+       UPDATE CAROUSEL
+    ===================================================== */
+
+    function updateCarousel(animate = true) {
+
+        const distance =
+            getSlideDistance();
+
+
+        /* -----------------------------------------------
+           TRANSITION
+        ------------------------------------------------ */
+
+        if (animate) {
+
+            track.style.transition =
+                "transform 0.65s cubic-bezier(.65,0,.35,1)";
+
+        } else {
+
+            track.style.transition =
+                "none";
+        }
+
+
+        /* -----------------------------------------------
+           MOVE TRACK
+        ------------------------------------------------ */
+
+        track.style.transform =
+            `translate3d(-${distance * currentPage}px, 0, 0)`;
+
+
+        /* -----------------------------------------------
+           PAGE BUTTON ACTIVE
+        ------------------------------------------------ */
+
+        pageButtons.forEach(
+            function (button, index) {
+
+                button.classList.toggle(
+                    "active",
+                    index === currentPage
+                );
+
+                button.setAttribute(
+                    "aria-current",
+                    index === currentPage
+                        ? "page"
+                        : "false"
+                );
+
+            }
+        );
+
+
+        /* -----------------------------------------------
+           PREVIOUS
+        ------------------------------------------------ */
+
+        if (prevButton) {
+
+            prevButton.disabled =
+                currentPage === 0;
+        }
+
+
+        /* -----------------------------------------------
+           NEXT
+        ------------------------------------------------ */
+
+        if (nextButton) {
+
+            nextButton.disabled =
+                currentPage >= totalPages - 1;
+        }
+
+
+        /* -----------------------------------------------
+           SHOWING 1–3 / 4–6
+        ------------------------------------------------ */
+
+        updateShowing();
+    }
+
+
+    /* =====================================================
+       GO TO PAGE
+    ===================================================== */
+
+    function goToPage(page) {
+
+        if (page < 0) {
+            page = 0;
+        }
+
+        if (page > totalPages - 1) {
+            page = totalPages - 1;
+        }
+
+        currentPage = page;
+
+        updateCarousel(true);
+    }
+
+
+    /* =====================================================
+       PAGE BUTTONS
+    ===================================================== */
+
+    pageButtons.forEach(
+        function (button, index) {
+
+            button.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    goToPage(index);
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       PREVIOUS BUTTON
+    ===================================================== */
+
+    if (prevButton) {
+
+        prevButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                if (currentPage > 0) {
+
+                    goToPage(
+                        currentPage - 1
+                    );
+                }
+
+            }
+        );
 
     }
 
-});
 
+    /* =====================================================
+       NEXT BUTTON
+    ===================================================== */
 
-/*====================================================
-SMOOTH SCROLL
-====================================================*/
+    if (nextButton) {
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        nextButton.addEventListener(
+            "click",
+            function (event) {
 
-    anchor.addEventListener("click", function (e) {
+                event.preventDefault();
 
-        e.preventDefault();
+                if (
+                    currentPage <
+                    totalPages - 1
+                ) {
 
-        const target = document.querySelector(this.getAttribute("href"));
+                    goToPage(
+                        currentPage + 1
+                    );
+                }
 
-        if (target) {
-
-            window.scrollTo({
-
-                top: target.offsetTop - 100,
-
-                behavior: "smooth"
-
-            });
-
-        }
-
-    });
-
-});
-
-
-/*====================================================
-ACTIVE MENU
-====================================================*/
-
-const sections = document.querySelectorAll("section");
-
-const navLinks = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 180;
-
-        const sectionHeight = section.clientHeight;
-
-        if (pageYOffset >= sectionTop) {
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-/*====================================================
-TYPING EFFECT
-====================================================*/
-
-const texts = [
-
-    "Business Analyst",
-
-    "Business Intelligence",
-
-    "Data Analyst",
-
-    "Product Development"
-
-];
-
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
-
-(function type() {
-
-    if (count === texts.length) {
-
-        count = 0;
+            }
+        );
 
     }
 
-    currentText = texts[count];
 
-    letter = currentText.slice(0, ++index);
+    /* =====================================================
+       TOUCH SWIPE
+    ===================================================== */
 
-    document.getElementById("typing").textContent = letter;
-
-    if (letter.length === currentText.length) {
-
-        setTimeout(() => {
-
-            erase();
-
-        }, 1800);
-
-    } else {
-
-        setTimeout(type, 90);
-
-    }
-
-})();
-
-function erase() {
-
-    letter = currentText.slice(0, --index);
-
-    document.getElementById("typing").textContent = letter;
-
-    if (letter.length === 0) {
-
-        count++;
-
-        setTimeout(type, 250);
-
-    } else {
-
-        setTimeout(erase, 45);
-
-    }
-
-}
+    let touchStartX = 0;
+    let touchEndX = 0;
 
 
-/*====================================================
-REVEAL ANIMATION
-====================================================*/
+    track.addEventListener(
+        "touchstart",
+        function (event) {
 
-const reveals = document.querySelectorAll(".white-section");
+            touchStartX =
+                event.touches[0].clientX;
 
-function revealSection() {
+        },
+        {
+            passive: true
+        }
+    );
 
-    reveals.forEach(section => {
 
-        const windowHeight = window.innerHeight;
+    track.addEventListener(
+        "touchend",
+        function (event) {
 
-        const revealTop = section.getBoundingClientRect().top;
+            touchEndX =
+                event.changedTouches[0].clientX;
 
-        const revealPoint = 120;
+            const difference =
+                touchEndX - touchStartX;
 
-        if (revealTop < windowHeight - revealPoint) {
 
-            section.classList.add("show");
+            /* Swipe LEFT */
+
+            if (difference < -50) {
+
+                if (
+                    currentPage <
+                    totalPages - 1
+                ) {
+
+                    goToPage(
+                        currentPage + 1
+                    );
+                }
+            }
+
+
+            /* Swipe RIGHT */
+
+            else if (difference > 50) {
+
+                if (currentPage > 0) {
+
+                    goToPage(
+                        currentPage - 1
+                    );
+                }
+            }
 
         }
-
-    });
-
-}
-
-window.addEventListener("scroll", revealSection);
-
-revealSection();
+    );
 
 
-/*====================================================
-PARALLAX HERO
-====================================================*/
+    /* =====================================================
+       MOUSE DRAG
+    ===================================================== */
 
-const heroImage = document.querySelector(".hero-image");
+    let mouseStartX = 0;
+    let mouseEndX = 0;
+    let isDragging = false;
 
-window.addEventListener("mousemove", (e) => {
 
-    const x = (window.innerWidth / 2 - e.clientX) / 45;
+    track.addEventListener(
+        "mousedown",
+        function (event) {
 
-    const y = (window.innerHeight / 2 - e.clientY) / 45;
+            isDragging = true;
 
-    heroImage.style.transform = `translate(${x}px, ${y}px)`;
+            mouseStartX =
+                event.clientX;
+
+            mouseEndX =
+                mouseStartX;
+
+            track.style.cursor =
+                "grabbing";
+        }
+    );
+
+
+    document.addEventListener(
+        "mousemove",
+        function (event) {
+
+            if (!isDragging) {
+                return;
+            }
+
+            mouseEndX =
+                event.clientX;
+        }
+    );
+
+
+    document.addEventListener(
+        "mouseup",
+        function () {
+
+            if (!isDragging) {
+                return;
+            }
+
+            isDragging = false;
+
+            track.style.cursor =
+                "grab";
+
+
+            const difference =
+                mouseEndX - mouseStartX;
+
+
+            /* Drag LEFT */
+
+            if (difference < -60) {
+
+                if (
+                    currentPage <
+                    totalPages - 1
+                ) {
+
+                    goToPage(
+                        currentPage + 1
+                    );
+                }
+            }
+
+
+            /* Drag RIGHT */
+
+            else if (difference > 60) {
+
+                if (currentPage > 0) {
+
+                    goToPage(
+                        currentPage - 1
+                    );
+                }
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       KEYBOARD
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            const activeElement =
+                document.activeElement;
+
+            const isTyping =
+                activeElement &&
+                (
+                    activeElement.tagName === "INPUT" ||
+                    activeElement.tagName === "TEXTAREA" ||
+                    activeElement.isContentEditable
+                );
+
+
+            if (isTyping) {
+                return;
+            }
+
+
+            /* LEFT */
+
+            if (event.key === "ArrowLeft") {
+
+                if (currentPage > 0) {
+
+                    goToPage(
+                        currentPage - 1
+                    );
+                }
+            }
+
+
+            /* RIGHT */
+
+            if (event.key === "ArrowRight") {
+
+                if (
+                    currentPage <
+                    totalPages - 1
+                ) {
+
+                    goToPage(
+                        currentPage + 1
+                    );
+                }
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       RESIZE
+    ===================================================== */
+
+    let resizeTimer;
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            clearTimeout(resizeTimer);
+
+            resizeTimer =
+                setTimeout(
+                    function () {
+
+                        updateCarousel(false);
+
+                    },
+                    150
+                );
+
+        }
+    );
+
+
+    /* =====================================================
+       INITIALIZE
+    ===================================================== */
+
+    updateCarousel(false);
 
 });
